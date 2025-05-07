@@ -117,14 +117,23 @@ $setting = \App\Models\SystemSetting::first();
                             <input class="og-lets-work-form-input-field" type="email" name="email"
                                 placeholder="Email Address" required>
                             <input class="og-lets-work-form-input-field" type="text" name="phone"
-                                placeholder="Phone Number" required>
+                                placeholder="Phone Number">
+                        </div>
+                        <div class="og-lets-work-form-input">
+                            <input class="og-lets-work-form-input-field" type="text" name="company"
+                            placeholder="Company Name" required>
                         </div>
                         <select class="og-lets-work-form-input-field" style="margin-bottom: 24px;" name="subject" required>
                             <option value="" selected disabled>Service Type</option>
-                            <option value="seo_optimization">SEO</option>
-                            <option value="data_integration">Data Integration</option>
-                            <option value="analytics_success">Analytics Success</option>
-                            <option value="general_inquiry">General Inquiry</option>
+                            <option value="content_seo">Content SEO</option>
+                            <option value="local_seo">Local SEO</option>
+                            <option value="keyword_research_and_tracking">Keyword Research and Tracking</option>
+                            <option value="technical_seo">Technical SEO</option>
+                            <option value="enterprise_seo">Enterprise SEO</option>
+                            <option value="on_page_optimization">On-Page Optimization</option>
+                            <option value="data_analysis">Data Analysis</option>
+                            <option value="ecommerce">eCommerce</option>
+                            <option value="other">Other</option>
                         </select>
                         <textarea class="og-lets-work-form-input-field h-200" name="message" placeholder="How can I help you?" required></textarea>
 

@@ -11,7 +11,7 @@ Route::post('/', [HomeController::class, 'subscribe'])->name('subscribe');
 
 
 Route::controller(PageController::class)->group(function () {
-    Route::get('/service', 'servicePage')->name('service');
+    Route::get('/services', 'servicePage')->name('service');
     Route::get('/about', 'aboutPage')->name('about');
 
     //service pages all pages controller

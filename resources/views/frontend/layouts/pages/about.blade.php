@@ -6,7 +6,7 @@
         <section class="og-about-us-page-banner" style="background-image: url('{{ asset("frontend/assets/images/about_banner.png") }}');">
             <div class="container">
                 <h1 class="text-white text-center og-about-us-title">
-                    About Us
+                    About SEO ESP
                 </h1>
                 <p class="og-about-us-path-title">
                     Home
@@ -27,32 +27,6 @@
             <div class="og-about-page-seo-esp-image-section">
                 <div class="og-about-page-seo-esp-image-container">
                     <img class="og-about-page-seo-esp-image" src="./frontend/assets/images/about_seo_esp.png" alt="about_seo_esp">
-
-                    <div class="og-about-image-bottom">
-                        <div class="og-about-image-bottom-property">
-                            <div class="og-about-image-bottom-property-435">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="57" viewBox="0 0 13 57"
-                                     fill="none">
-                                    <g clip-path="url(#clip0_27848_6921)">
-                                        <path
-                                            d="M11.5164 24.0864L12.9911 26.6916L8.50564 28.3629L12.9911 29.9973L11.4795 32.7132L7.75603 29.7393L8.48107 34.5073H5.43343L6.09703 29.7393L2.33664 32.7746L0.763672 29.9973L5.21223 28.326L0.800538 26.6916L2.26291 24.0495L6.09703 26.9866L5.40886 22.2185H8.48107L7.75603 26.9866L11.5164 24.0864Z"
-                                            fill="#726352" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_27848_6921">
-                                            <rect width="12.2274" height="55.9513" fill="white"
-                                                  transform="matrix(1 0 0 -1 0.763672 56.3386)" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                <h3 class="og-about-image-bottom-property-435-title">
-                                    435
-                                </h3>
-                                <span class="og-about-image-bottom-property-435-plus">+</span>
-                            </div>
-                            <span class="og-about-image-bottom-property-435-description">Team Members</span>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="og-about-page-seo-esp-text-section">
@@ -67,7 +41,7 @@
                     </svg>
                     who we are
                 </button>
-                <h3 class="og-common-title og-about-page-seo-esp-title">About SEO ESP</h3>
+                <h2 class="og-common-title og-about-page-seo-esp-title">Get to Know SEO ESP</h2>
                 <p class="og-about-page-seo-esp-i"><i>Rooted in Expertise. Built for Clarity.</i></p>
                 <p class="og-common-description og-about-page-seo-esp-description">
                     I started SEO ESP because I was tired of seeing businesses waste money on SEO strategies that don’t
@@ -81,6 +55,12 @@
                     <br>
                     I built this consultancy on a simple idea: SEO should be clear, strategic, and tailored to your
                     business, not a black box you’re forced to trust blindly.
+                    <br>
+                    <br>
+                    <br>
+                    <span class="og-highlighted signature">Cassie Vignieri</span>
+                    <br>
+                    President and Founder.
                 </p>
             </div>
         </section>
@@ -112,15 +92,17 @@
                 </p>
             </div>
             <div class="og-real-experience-img">
-                <img class="og-real-experience-img-item og-real-experience-img-2" src="frontend/assets/images/real_experience_img2.png" alt="">
-                <img class="og-real-experience-img-item og-real-experience-img-1" src="frontend/assets/images/real_experience_img1.png" alt="">
+                <img class="og-real-experience-img-item" src="frontend/assets/images/real_experience_img2.png" alt="">
             </div>
         </section>
         <!-- ===========================Real Experience. Real Strategy. end Here==============================================-->
         <!-- ===========================SEO That Scales Across Markets and Industries. start Here==============================================-->
         <section class="container og-seo-scales">
             <div class="og-seo-scales-img-con">
-                <img class="og-seo-scales-img" src="frontend/assets/images/author.png" alt="">
+                <div class="og-seo-scales-img-container">
+                    <img class="og-seo-scales-img" src="frontend/assets/images/author.png" alt="">
+                </div>
+                <p class="og-who-we-are-img-title image-subtitle">Cassie Vignieri, President and Founder.</p>
             </div>
             <div class="og-seo-scales-text">
                 <h2 class="og-seo-scales-title">SEO That Scales Across Markets and Industries.
@@ -163,10 +145,10 @@
             <div class="og-here-look-steps-container">
                 <div class="og-here-look-step">
                     <img class="og-here-look-step-img" src="frontend/assets/images/here_look_step_icon_1.png" alt="">
-                    <h4 class="og-here-look-step-title">International SEO</h4>
+                    <h4 class="og-here-look-step-title">Local & National SEO</h4>
                     <p class="og-here-look-step-descrition">
-                        Strategies deployed across Europe, Mexico, and South America, including multi-language and
-                        multi-region implementations.
+                        Campaigns that build authority in a single city—or across the entire U.S.—depending on your
+                        business goals.
                     </p>
 
                     <div class="og-arrow-1">
@@ -211,10 +193,9 @@
 
                 <div class="og-here-look-step">
                     <img class="og-here-look-step-img" src="frontend/assets/images/here_look_step_icon_4.png" alt="">
-                    <h4 class="og-here-look-step-title">Local & National SEO</h4>
+                    <h4 class="og-here-look-step-title">International SEO</h4>
                     <p class="og-here-look-step-descrition">
-                        Campaigns that build authority in a single city—or across the entire U.S.—depending on your
-                        business goals.
+                        Strategies deployed across Europe, Mexico, Canada, and South America, including multi-language and multi-region implementations.
                     </p>
                 </div>
             </div>

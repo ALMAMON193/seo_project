@@ -192,6 +192,10 @@ main {
     color: white;
 }
 
+.signature{
+    font-style: italic !important;
+}
+
 /* =======================
       Common Style End Here
    =======================
@@ -516,8 +520,23 @@ main {
 .og-who-we-are {
     gap: 57px;
     margin-bottom: 130px;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-items: center;
 }
-
+.og-who-we-are-left{
+    width: 50%;
+}
+.og-who-we-are-right{
+    width: 50%;
+}
+.og-who-we-are-image{
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
 .og-who-we-are-img-title {
     color: var(--secondary-400);
     margin-top: 30px;
@@ -526,6 +545,11 @@ main {
     font-style: normal;
     font-weight: 400;
     line-height: 28px;
+}
+.image-subtitle {
+    color: #01120d;
+    font-weight: 700;
+    margin-top: 10px;
 }
 
 .og-who-we-are-title {
@@ -1479,28 +1503,14 @@ main {
     padding: 125px 20px;
     margin-bottom: 80px;
     justify-content: space-between;
-}
-
-.og-real-experience-img-1,
-.og-real-experience-img-2 {
-    width: 100%;
-    max-width: 60%;
-    object-fit: cover;
+    align-items: center;
 }
 
 .og-real-experience-img-item {
-    position: absolute;
-    z-index: 2;
-}
-
-.og-real-experience-img-2 {
-    top: 0;
-    right: 0;
-}
-
-.og-real-experience-img-1 {
-    bottom: 0;
-    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: cover;
+    object-fit: cover;
 }
 
 .og-real-experience-text-title {
@@ -1525,7 +1535,9 @@ main {
     gap: 100px;
     margin-bottom: 120px;
 }
-
+.og-seo-scales-img-container{
+    width: 100%;
+}
 .og-seo-scales-img-con {
     width: 50%;
 }

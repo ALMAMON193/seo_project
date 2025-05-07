@@ -99,7 +99,6 @@
                             </a>
                         </div>
                     </div>
-
                     <div class="relative">
                         <img src="frontend/assets/images/svg/service_card_bg.svg" alt="service" />
                         <div class="absolute og-service-card-content">
@@ -169,14 +168,17 @@
         <!-- ================================Service Section End Here ========================================-->
 
         <!-- ================================Who We Are Section Start Here ========================================-->
-        <section class="container flex og-who-we-are">
-            <div class="">
-                <img src="frontend/assets/images/who-we-are.png" alt="" class="og-who-we-are-image">
+        <section class="container og-who-we-are">
+            <div class="og-who-we-are-left">
+                <div>
+                    <img src="frontend/assets/images/who-we-are.png" alt="" class="og-who-we-are-image">
+                    <p class="og-who-we-are-img-title image-subtitle">Cassie Vignieri, President and Founder.</p>
+                </div>
                 <p class="og-who-we-are-img-title">We believe in partnership over quick wins. You won’t just get SEO
                     tactics—you’ll get a long-term ally who’s
                     invested in your growth.</p>
             </div>
-            <div class="">
+            <div class="og-who-we-are-right">
                 <h2 class="og-who-we-are-title">
                     Who <span class="text-white">We Are</span>
                 </h2>
@@ -279,20 +281,19 @@
                         <div class="flex items-start gap-10">
                             <img src="frontend/assets/images/svg/check.svg" alt="">
                             <p class="og-seo-esp-list-description">
-                                Focus on strategies that actually move the needle periods.
+                                Focus on strategies that actually move the needle.
                             </p>
                         </div>
                         <div class="flex items-start gap-10">
                             <img src="frontend/assets/images/svg/check.svg" alt="">
                             <p class="og-seo-esp-list-description">
-                                Use trusted auditing tools, but never treat them as gospel periods.
+                                Use trusted auditing tools, but never treat them as gospel.
                             </p>
                         </div>
                         <div class="flex items-start gap-10">
                             <img src="frontend/assets/images/svg/check.svg" alt="">
                             <p class="og-seo-esp-list-description">
-                                Tailor everything to your site’s structure, your competition, your content, and your goals
-                                periods.
+                                Tailor everything to your site’s structure, your competition, your content, and your goals.
                             </p>
                         </div>
                         <div class="flex items-start gap-10">
@@ -300,7 +301,7 @@
                             <p class="og-seo-esp-list-description">
                                 Avoid activities that waste time and money, like spammy link building or chasing keywords
                                 that no one
-                                converts on periods.
+                                converts on.
                             </p>
                         </div>
                     </div>
@@ -326,10 +327,10 @@
                 <div class="og-seo-esp-bottom-card">
                     <h3 class="og-seo-esp-bottom-card-title">Curious if your SEO is working?</h3>
                     <p class="og-common-description">
-                        Let us take a look. <span class="og-highlighted">Contact us today for a free audit and start
+                        Let us take a look. <a href="{{ route('contact') }}" class="og-highlighted">Contact us today for a free audit and start
                             improving the
                             metrics that actually
-                            matter to your business.</span>
+                            matter to your business.</a>
                     </p>
                 </div>
             </div>
