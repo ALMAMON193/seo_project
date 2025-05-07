@@ -1,0 +1,2420 @@
+/* google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Signika:wght@300..700&display=swap");
+/* google fonts */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    outline: 0px;
+    box-sizing: border-box;
+}
+
+/* Custom fonts */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+strong,
+i,
+ol,
+ul,
+li,
+form,
+label,
+footer,
+header,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+:root {
+    --primary: #01120d;
+    --primary-50: #fbfaf8;
+    --primary-100: #f2eee8;
+    --primary-300: #bdbdbd;
+
+    --primary-200: #cdc2ab;
+
+    --secondary: #d8cfbc;
+    --basic-white: #fff;
+    --secondary-300: #84837c;
+    --secondary-400: #6d6b63;
+    --secondary-500: #ddd4c2;
+
+    --blue-grey-400: #c4cdd5;
+    --blue-grey-800: #212b36;
+    --blue-grey-600: #637381;
+
+    --trust-bg: #fffbf4;
+    /* Font Family */
+    --primary-font: "Roboto", sans-serif;
+    --signika-font: "Signika", sans-serif;
+    --poppins-font: "Poppins", sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: var(--primary-font);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+/* =======================
+      Common Style  Start Here
+   =======================
+*/
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0 20px;
+}
+
+.og-btn {
+    display: flex;
+    padding: 11px 22px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--basic-white);
+    border: 0;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.og-btn-2 {
+    display: flex;
+    width: 190px;
+    height: 56px;
+    padding: 11px 22px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: var(--primary);
+    color: #fff;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.og-contact-btn {
+    background: #4F5141 !important;
+}
+
+.og-bg-primary-color {
+    background-color: var(--secondary);
+}
+
+.og-highlighted {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.og-common-title {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.og-common-description {
+    color: var(--secondary-400);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding-top: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.active_nav {
+    display: flex !important;
+    flex-direction: column;
+    padding: 50px 0;
+    position: absolute;
+    top: 100%;
+    background-color: #252c2c;
+    color: white;
+    width: 100%;
+    left: 0;
+}
+
+.active_nav li a {
+    color: white;
+}
+
+/* =======================
+      Common Style End Here
+   =======================
+*/
+
+/* =======================
+      Common Utils Start Here
+   =======================
+*/
+.h-200 {
+    height: 200px;
+}
+
+.text-white {
+    color: var(--primary-50);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* display */
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+/* Position */
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+/* margin related */
+.mx-auto {
+    margin: 0 auto;
+}
+
+.og-mt-24 {
+    margin-top: 24px;
+}
+
+.og-mb-16 {
+    margin-bottom: 16px;
+}
+
+.og-mt-120 {
+    margin-top: 120px;
+}
+
+.og-space-y-1>*+* {
+    padding-top: 0.25rem;
+    /* 4px */
+}
+
+/* Hover Utilities*/
+
+.hover\:text-grey:hover {
+    color: var(--blue-grey-800);
+}
+
+.og-border-none {
+    border-bottom: none !important;
+}
+
+/* =======================
+      Common Utils End Here
+   =======================
+*/
+
+/* ============================
+     Navbar Start Hare
+  ==============================
+*/
+.og-dropdown {
+    position: relative;
+}
+
+.og-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    list-style: none;
+    min-width: max-content;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    transition: all 0.3s ease;
+    z-index: 100;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.og-dropdown-list {
+    margin: 5px 0;
+    border-bottom: 1px solid var(--primary-100);
+    padding: 8px;
+}
+
+.og-dropdown-list:last-child {
+    border-bottom: none !important;
+}
+
+.og-nav-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.og-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 34px 10px;
+    position: relative;
+}
+
+.og-navlink-content {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.og-navlink {
+    color: var(--secondary-300);
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.og-logo {
+    width: 190px;
+    height: auto;
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.og-nav-logo {
+    width: 100%;
+    height: auto;
+    scale: 1.11;
+}
+
+/* ============================
+     Navbar End Hare
+  ==============================
+*/
+
+/* ===== :: Main Menu Start Hare :: ==== */
+
+/* ============================
+     Banner Start Hare
+  ==============================
+*/
+.og-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 130px;
+    margin-top: 60px;
+}
+
+.og-banner-title {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    margin-bottom: 32px;
+}
+
+.og-banner-description {
+    color: var(--secondary-400);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.og-banner-left-content {
+    width: 50%;
+    margin-top: 32px;
+}
+
+.og-banner-right-content {
+    width: 50%;
+}
+
+/* ============================
+     Banner End Hare
+  ==============================
+*/
+/* ============================
+     Service Start Hare
+  ==============================
+*/
+
+.og-service {
+    margin-bottom: 130px;
+}
+
+.og-service-title {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+    margin-bottom: 40px;
+}
+
+.og-service-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.og-service-content-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.og-service-content-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+
+.og-service-card-content {
+    top: 0px;
+    padding: 24px;
+    height: 100%;
+    background-image: url("/assets/images/svg/service_card_bg.svg");
+    background-repeat: no-repeat;
+}
+
+.og-service-top-content {
+    gap: 16px;
+    border-bottom: 1px solid var(--secondary);
+    padding-bottom: 11px;
+}
+
+.og-service-description {
+    color: rgba(64, 74, 61, 0.8);
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.769px;
+    margin-top: 18px;
+    padding-right: 40px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}
+
+.og-service-redirect-icon {
+    display: flex;
+    width: 42.473px;
+    height: 42.473px;
+    padding: 7.336px 12.851px 7.336px 12.85px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 21.237px;
+    background: var(--primary);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition: all linear 0.3s;
+}
+
+.og-service-card-content:hover .og-service-redirect-icon {
+    transform: rotate(-100deg);
+}
+
+/* ============================
+     Service End Hare
+  ==============================
+*/
+/* ============================
+     Who we are start Hare
+  ==============================
+*/
+.og-who-we-are {
+    gap: 57px;
+    margin-bottom: 130px;
+}
+
+.og-who-we-are-img-title {
+    color: var(--secondary-400);
+    margin-top: 30px;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.og-who-we-are-title {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+}
+
+.og-who-we-are-description {
+    color: var(--secondary-400);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 25px;
+}
+
+.og-who-we-are-list {
+    max-width: 711px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: var(--secondary-500);
+    padding: 30px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.og-who-we-are-list-title {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.og-who-we-are-list-description {
+    color: var(--secondary-400);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+/* ============================
+     Service End Hare
+  ==============================
+*/
+/* ============================
+     Why Trust Us With Your SEO? End Hare
+  ==============================
+*/
+.og-trust-section {
+    background-color: var(--trust-bg);
+}
+
+.og-trust-content {
+    padding-top: 80px;
+    padding-bottom: 74px;
+}
+
+.og-trust-title {
+    color: var(--primary);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+}
+
+.og-trust-description {
+    color: var(--secondary-400);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+/* ============================
+     Why Trust Us With Your SEO? End Hare
+  ==============================
+*/
+/* ============================
+     What Makes SEO ESP Different? Start Hare
+  ==============================
+*/
+.og-seo-esp-section {
+    padding: 130px 0px;
+}
+
+.og-seo-esp {
+    justify-content: space-between;
+    align-items: center;
+    gap: 133px;
+    margin-top: 32px;
+}
+
+.og-seo-esp-list {
+    border-radius: 20px;
+    background: #ddd4c2;
+    padding: 32px;
+}
+
+.og-seo-esp-list-title {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    margin-bottom: 40px;
+}
+
+.og-seo-esp-bottom-card-section {
+    display: flex;
+    gap: 32px;
+    margin-top: 130px;
+}
+
+.og-seo-esp-bottom-card {
+    width: 50%;
+    padding: 32px;
+    padding-bottom: 62px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #fffbf4;
+}
+
+.og-seo-esp-bottom-card-title {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.og-seo-esp-list-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* ============================
+     What Makes SEO ESP Different? End Hare
+  ==============================
+*/
+/* ============================
+     Get In Touch End Hare
+  ==============================
+*/
+.og-get-in-touch {
+    margin-bottom: 130px;
+}
+
+.og-get-in-touch-content {
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #fffbf4;
+    box-shadow: 0px 0px 60px 30px rgba(0, 0, 0, 0.03);
+    padding: 10px;
+    display: flex;
+    margin-top: 75px;
+}
+
+.og-get-in-touch-info {
+    width: 40%;
+    background: var(--primary);
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    gap: 30px;
+}
+
+.og-get-in-touch-form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 42px;
+}
+
+.og-get-in-touch-info-title {
+    color: var(--basic-white);
+    font-family: var(--primary-font);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.og-get-in-touch-info-sub-title {
+    color: #c9c9c9;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 6px;
+}
+
+.og-get-in-touch-main-info {
+    color: var(--basic-white);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.og-get-in-touch-main-info-li {
+    display: flex;
+    gap: 25px;
+    font-size: 16px;
+}
+
+.og-get-in-touch-main-info-social-link {
+    display: flex;
+    gap: 24px;
+}
+
+.og-get-in-touch-main-info-social-link a svg {
+    width: 30px;
+    height: 30px;
+}
+
+.og-get-in-touch-form-container {
+    width: 60%;
+    padding: 50px;
+}
+
+.og-get-in-touch-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7px;
+}
+
+.og-get-in-touch-input-label {
+    color: var(--secondary-300);
+    font-family: var(--primary-font);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.og-get-in-touch-input-field {
+    border: none;
+    outline: none;
+    background: none;
+    margin-top: 12px;
+    color: #011c2a;
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.send-message {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/*  */
+.checkbox-title {
+    color: #011c2a;
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    margin-top: 45px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px 0px;
+    border-radius: 12px;
+    margin-bottom: 45px;
+}
+
+.checkbox-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    min-width: fit-content;
+}
+
+.checkbox-item input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.checkbox-item input[type="radio"]:checked+.custom-checkbox {
+    background-color: #011c2a;
+}
+
+.checkbox-item input[type="radio"]:checked+.custom-checkbox::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* ============================
+     Get In Touch End Hare
+  ==============================
+*/
+/* ============================
+     Footer Start Hare
+  ==============================
+*/
+.footer-1 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 127px;
+}
+
+.footer-content {
+    padding: 30px 38px;
+    background-color: #d4c9b6;
+    border-radius: 10px;
+    /* position: absolute; */
+    /* bottom: 0px; */
+    display: flex;
+    max-width: 1090px;
+    /* margin-top: -100px; */
+    margin-top: 100px;
+}
+
+.footer-shape-container {
+    position: absolute;
+    width: 100%;
+}
+
+.subcribe-now {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.subcribe-now-input-field {
+    outline: none;
+    color: #837b73;
+    background: none;
+    border: none;
+    padding: 14px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.subcribe-now-input-field::placeholder {
+    color: #ffffff;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.subcribe-now-field {
+    display: flex;
+    background-color: #c2b6a1;
+    width: 560px;
+    border-radius: 5px 0 0 5px;
+}
+
+.footer-content-title {
+    color: #fffbf4;
+
+    /* Headlines/H3 */
+    font-family: var(--primary-font);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    /* 150% */
+}
+
+.footer-content-description {
+    color: var(--Blue-Grey-800, #212b36);
+
+    /* Texts/Body2 */
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    /* 157.143% */
+}
+
+.footer-navlink {
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
+    margin-bottom: 61px;
+}
+
+.footer-nav-hyper-link {
+    gap: 61px;
+}
+
+.og-footer-link {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.og-footer-term-link {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.og-footer-bottom-terms {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.og-footer-term {
+    width: 50%;
+}
+
+/* ============================
+     Footer End Hare
+  ==============================
+*/
+
+/* ============================
+     Service Page Banner Start Hare
+  ==============================
+*/
+.og-service-page-2 {
+    background-image: url("../images/services_banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 120px;
+    padding-bottom: 275px;
+}
+
+.og-service-title-1 {
+    color: var(--primary-100);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 74px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 135%;
+}
+
+.og-service-description-1 {
+    color: var(--primary-100);
+    text-align: center;
+
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* ============================
+     Service Page Banner End Hare
+  ==============================
+*/
+/* ============================
+     Local SEO Start Hare
+  ==============================
+*/
+.local-seo {
+    gap: 55px;
+    margin-bottom: 120px;
+    margin-top: 120px;
+}
+
+.local-seo-title {
+    color: var(--blue-grey-800);
+    font-family: var(--primary-font);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+}
+
+.local-seo-right-side-con {
+    width: 50%;
+}
+
+.local-seo-right-side-con-1 {
+    width: 50%;
+}
+
+.local-seo-description {
+    color: var(--secondary-400);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+/* .local-seo-img {
+  max-width: 670px;
+} */
+
+.local-seo-img-caption {
+    color: var(--secondary-400);
+
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+}
+
+.local-seo-con-1-title {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    margin-top: 32px;
+}
+
+.local-seo-card-1 {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    background-color: var(--primary-200);
+    width: 40%;
+    border-radius: 20px;
+}
+
+.local-seo-steps {
+    display: flex;
+    gap: 14px;
+}
+
+.local-seo-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.local-seo-card-2 {
+    padding: 20px;
+    gap: 16px;
+    background-color: var(--primary-200);
+    border-radius: 20px;
+}
+
+/* ============================
+     Local SEO End Hare
+  ==============================
+*/
+/* ============================
+     Keyword Research & Tracking Start Hare
+  ==============================
+*/
+.og-keyword-section {
+    padding-top: 80px;
+    padding-bottom: 51px;
+    background-color: #fffbf4;
+}
+
+.og-keyword-title {
+    color: var(--primary);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+}
+
+.og-keyword-subtitle {
+    color: var(--primary);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    margin-top: 48px;
+}
+
+.og-keyword-description {
+    color: var(--secondary-400);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 16px;
+}
+
+.og-tracking-card {
+    max-width: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.og-tracking {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 33px;
+}
+
+.og-tracking-sub-title {
+    color: rgba(64, 74, 61, 0.8);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.769px;
+}
+
+.og-tracking-title {
+    color: var(--primary);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+/* ============================
+     Keyword Research & Tracking End Hare
+  ==============================
+*/
+/* ============================
+     Boost Your Online Visibility with Expert SEO Services start Hare
+  ==============================
+*/
+
+.boost-section {
+    background-image: url("../images/boost_bg.png");
+    padding-top: 230px;
+    padding-bottom: 230px;
+    margin-bottom: 120px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.boost-section-title {
+    color: var(--primary-50);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+}
+
+.boost-section-sub-title {
+    color: var(--blue-grey-400);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 24px;
+}
+
+.og-boost-section-button {
+    display: flex;
+    width: 340px;
+    height: 60px;
+    padding: 11px 22px;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    border-radius: 50px;
+    background: var(--basic-white);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    text-transform: uppercase;
+    margin: 0px auto;
+    margin-top: 60px;
+}
+
+/* ============================
+     Boost Your Online Visibility with Expert SEO Services end Hare
+  ==============================
+*/
+
+/* ============================
+     About Us Page Start Hare
+  ==============================
+*/
+/* ============================
+     About Us Banner Start Hare
+  ==============================
+*/
+.og-about-us-page-banner {
+    background-image: url("../images/about_banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 380px;
+    padding-top: 184px;
+}
+
+.og-about-us-title {
+    color: var(--primary-50);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 74px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.og-about-us-path-title {
+    color: var(--primary-300);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+/* ============================
+     About Us Banner end Hare
+  ==============================
+*/
+/* ============================
+     About Us Banner end Hare
+  ==============================
+*/
+.og-about-page-seo-esp-section {
+    display: flex;
+    gap: 74px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.og-about-page-seo-esp-image-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.og-about-page-seo-esp-image-container {
+    position: relative;
+}
+
+.og-about-page-seo-esp-image {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.og-about-page-seo-esp-text-section {
+    width: 50%;
+}
+
+/* .og-about-page-seo-esp-image {} */
+
+.og-about-image-bottom {
+    position: absolute;
+    bottom: -50px;
+    right: -10px;
+    background-color: var(--secondary);
+    border-radius: 20px 0px 0px 0px;
+    padding: 20px 0px 0px 20px;
+}
+
+.og-about-image-bottom-property {
+    display: inline-flex;
+    padding: 16.376px 30.705px 26.277px 27.293px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7.301px;
+    border-radius: 20.47px;
+    background: #fffbf4;
+}
+
+.og-about-image-bottom-property-435 {
+    display: flex;
+    align-items: center;
+    color: #404a3d;
+    gap: 3px;
+}
+
+.og-about-image-bottom-property-435-title {
+    color: #404a3d;
+    font-family: var(--signika-font);
+    font-size: 49.128px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 55.951px;
+}
+
+.og-about-image-bottom-property-435-plus {
+    color: #404a3d;
+    font-family: var(--signika-font);
+    font-size: 27.293px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 27.293px;
+}
+
+.og-about-image-bottom-property-435-description {
+    color: #666;
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17.468px;
+    border-top: 0.682px solid rgba(64, 74, 61, 0.2);
+    padding-top: 7.5px;
+}
+
+.og-about-page-seo-esp-tag-btn {
+    color: #878786;
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    display: flex;
+    padding: 2.5px 19.23px 3.5px 15px;
+    align-items: center;
+    gap: 11.284px;
+    border-radius: 30px;
+    background: #fffbf4;
+    border: none;
+    margin-bottom: 32px;
+}
+
+.og-about-page-seo-esp-i {
+    color: #535857;
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 36px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+/* ============================
+     About Us Banner end Hare
+  ==============================
+*/
+/* ============================
+     Real Experience. Real Strategy. start Here Hare
+  ==============================
+*/
+.og-real-experience-text {
+    width: 50%;
+    padding-right: 40px;
+}
+
+.og-real-experience-img {
+    width: 50%;
+    position: relative;
+}
+
+.og-real-experience {
+    display: flex;
+    gap: 24px;
+    padding: 125px 20px;
+    margin-bottom: 80px;
+    justify-content: space-between;
+}
+
+.og-real-experience-img-1,
+.og-real-experience-img-2 {
+    width: 100%;
+    max-width: 60%;
+    object-fit: cover;
+}
+
+.og-real-experience-img-item {
+    position: absolute;
+    z-index: 2;
+}
+
+.og-real-experience-img-2 {
+    top: 0;
+    right: 0;
+}
+
+.og-real-experience-img-1 {
+    bottom: 0;
+    left: 0;
+}
+
+.og-real-experience-text-title {
+    font-size: 44px;
+    margin-bottom: 16px;
+}
+
+.og-real-experience-text-description {
+    font-size: 16px;
+}
+
+/* ============================
+    Real Experience. Real Strategy. end Hare
+  ==============================
+*/
+/* ============================
+    SEO That Scales Across Markets and Industries. start Here
+  ==============================
+*/
+.og-seo-scales {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 120px;
+}
+
+.og-seo-scales-img-con {
+    width: 50%;
+}
+
+.og-seo-scales-text {
+    width: 50%;
+}
+
+.og-seo-scales-img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.og-seo-scales-title {
+    color: var(--primary);
+    font-family: var(--poppins-font);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
+    margin-bottom: 16px;
+    margin-top: 70px;
+}
+
+/* ============================
+    SEO That Scales Across Markets and Industries. end Here
+  ==============================
+*/
+/* ============================
+    Here’s a look at the breadth of my work: start Here
+  ==============================
+*/
+/* .og-here-look-steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  margin-top: 48px;
+  margin-bottom: 120px;
+  position: relative;
+} */
+
+.og-here-look-steps-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 48px;
+    margin-bottom: 120px;
+    position: relative;
+}
+
+.og-here-look-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.og-here-look-step-img {
+    max-width: 100px;
+}
+
+.og-here-look-step-title {
+    color: var(--primary);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.og-here-look-step-descrition {
+    text-align: center;
+    color: #6b675e;
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.og-arrow-1 {
+    position: absolute;
+    right: -42%;
+    top: 0px;
+}
+
+.og-arrow-2 {
+    position: absolute;
+    right: -42%;
+    top: 73px;
+}
+
+.og-arrow-3 {
+    position: absolute;
+    right: -42%;
+    top: 0px;
+}
+
+/* ============================
+    Here’s a look at the breadth of my work: end Here
+  ==============================
+*/
+/* ============================
+    What Sets SEO ESP Apart? start Here
+  ==============================
+*/
+.og-what-sets-title {
+    color: var(--primary);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+}
+
+.og-what-sets-cards-section {
+    display: flex;
+    gap: 20px;
+    margin-top: 60px;
+    margin-bottom: 120px;
+}
+
+.og-what-sets-description {
+    color: #cecece;
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+.og-what-sets-card {
+    border-radius: 16px;
+    background: #726352;
+    flex-shrink: 0;
+    padding: 50px 30px;
+    width: 49%;
+}
+
+.og-what-sets-who-i-work-with {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 120px;
+}
+
+.og-what-sets-who-i-work-with-img-container {
+    width: 50%;
+}
+
+.og-what-sets-who-i-work-with-img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.og-what-sets-who-i-work-with-title {
+    color: #f9fafb;
+    font-family: var(--primary-font);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.og-what-sets-who-i-work-with-description {
+    color: #fff;
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+.og-what-sets-who-i-work-with-contant {
+    border-radius: 16px;
+    background: #9b907f;
+    padding: 30px;
+    height: 100%;
+}
+
+.og-what-sets-who-i-work-with-contant-2 {
+    border-radius: 16px;
+    background: #9b907f;
+    padding: 30px;
+    height: 40%;
+}
+
+.og-what-sets-who-i-work-with-parent {
+    width: 50%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ============================
+    What Sets SEO ESP Apart? end Here
+  ==============================
+/* ============================
+     About Us end Hare
+  ==============================
+*/
+
+/* ============================
+    Contact Us Page start Here
+  ==============================
+*/
+/* ============================
+    Contact Us Banner start Here
+  ==============================
+*/
+.og-contact-us-banner {
+    background-image: url("../images/contact_us_bg_img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 270px;
+    padding-top: 184px;
+}
+
+.og-contact-us-title {
+    color: var(--primary-50);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: 74px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.og-contact-us-path-title {
+    color: #bdbdbd;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ============================
+    Contact Us Banner start Here
+  ==============================
+*/
+/* ============================
+    About Information section Start Here
+  ==============================
+*/
+.og-information-section {
+    display: flex;
+    gap: 24px;
+    margin-top: 33px;
+}
+
+.og-information {
+    display: flex;
+    gap: 24px;
+    border-radius: 16px;
+    background: #fffbf4;
+    padding: 42px;
+    width: 100%;
+}
+
+.og-information-icon {
+    padding: 14px;
+    background-color: #f4f4f4;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 40px;
+}
+
+.og-information-title {
+    color: #01120d;
+    font-family: var(--primary-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+.og-information-descrition {
+    color: var(--blue-grey-600);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ============================
+    About Information section End Here
+  ==============================
+*/
+/* ============================
+    Lets Work Together Start Here
+  ==============================
+*/
+.og-lets-work-section {
+    margin-bottom: 120px;
+    padding-top: 120px;
+}
+
+.og-lets-work-content {
+    display: flex;
+    gap: 64px;
+}
+
+.og-lets-work-img-content {
+    width: 100%;
+}
+
+.og-lets-work-img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.og-lets-work-form-title {
+    color: var(--primary);
+    font-family: var(--primary-font);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
+    margin-top: 20px;
+}
+
+.og-lets-work-form-description {
+    color: #6b675e;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.6px;
+    margin-bottom: 32px;
+    margin-top: 16px;
+}
+
+.og-lets-work-form-input {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.og-lets-work-form-input-field {
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    border-radius: 8px;
+    background: #fffbf4;
+    border: none;
+    color: #a6a6a6;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.36px;
+    width: 100%;
+}
+
+.og-terms-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #050505;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 132%;
+    letter-spacing: -0.36px;
+    margin-top: 32px;
+    margin-bottom: 40px;
+}
+
+.og-terms {
+    text-decoration: none;
+    text-decoration-line: underline;
+    color: #01120d;
+}
+
+.og-terms-customcheckbox {
+    width: 17px;
+    height: 17px;
+    background-color: #e0e0e0;
+    margin-right: 8px;
+    display: inline-block;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid var(--blue-grey-600);
+}
+
+.og-terms-checkbox[type="checkbox"] {
+    display: none;
+}
+
+.og-terms-checkbox[type="checkbox"]:checked+.og-terms-customcheckbox {
+    background: var(--blue-grey-800);
+}
+
+.og-terms-checkbox[type="checkbox"]:checked+.og-terms-customcheckbox::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* ============================
+    Lets Work Together End Here
+  ==============================
+*/
+/* ============================
+    Location section End Here
+  ==============================
+*/
+.og-location {
+    margin-bottom: 120px;
+}
+
+.og-location-title {
+    color: #121212;
+    font-family: var(--primary-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.og-location-location-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.og-location-location-name {
+    color: #474747;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 234%;
+}
+
+.og-location-location-icon {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 3px 1px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: var(--White-Pure-White, #fff);
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1);
+}
+
+.og-location-location-map {
+    width: 100%;
+    height: 550px;
+    border-radius: 24px;
+}
+
+/* ============================
+    Location section End Here
+  ==============================
+*/
+
+/* ============================
+    Contact Us Page end Here
+  ==============================
+*/
+
+/* ====================================================
+     Keyword Research and Tracking Page Start Hare
+  =====================================================
+*/
+
+/*
+===================================
+Keyword Research Section Start Here
+===================================
+*/
+.og-keyword-section {
+    background-color: #d8cfbc;
+    padding: 180px 0;
+}
+
+.og-keyword-section-container {
+    display: flex;
+    gap: 184px;
+}
+
+.og-keyword-section-right {
+    width: 50%;
+}
+
+.og-keyword-section-left {
+    width: 50%;
+}
+
+.og-keyword-section-title {
+    color: var(--Blue-Grey-800, #212b36);
+    font-family: Roboto;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 84px */
+}
+
+.og-keyword-section-description {
+    color: var(--Secondary-secondary-400, #6d6b63);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 164%;
+    /* 29.52px */
+    margin-bottom: 40px;
+}
+
+.og-keyword-section-btn {
+    padding: 11px 22px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Roboto;
+    background-color: #111200;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid #111200;
+}
+
+/*
+===================================
+Keyword Research Section End Here
+===================================
+*/
+
+/*
+=============================================
+Beyond Basic Keyword Lists Section Start Here
+=============================================
+*/
+.og-beyond-basic-keyword-section {
+    padding: 105px 0;
+    background-color: #fffbf4;
+}
+
+.og-beyond-basic-keyword-section-heading {
+    color: var(--Blue-Grey-800, #212b36);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    /* 68.182% */
+}
+
+.og-beyond-basic-keyword-container {
+    display: flex;
+    gap: 54px;
+    margin-top: 70px;
+}
+
+.og-beyond-basic-keyword-description {
+    color: var(--Secondary-secondary-400, #6d6b63);
+
+    /* Headlines/H6 */
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    /* 155.556% */
+    margin: 20px 0;
+}
+
+.og-beyond-basic-keyword-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 51px;
+}
+
+.og-beyond-basic-keyword-card-title {
+    margin-top: 20px;
+
+    color: var(--Blue-Grey-800, #212b36);
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.og-beyond-basic-keyword-card-description {
+    color: rgba(64, 74, 61, 0.8);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.769px;
+    /* 141.21% */
+    margin-top: 8px;
+}
+
+/*
+=============================================
+Beyond Basic Keyword Lists Section End Here
+=============================================
+*/
+
+/*
+=============================================
+Content SEO Section Start Here
+=============================================
+*/
+.og-content-seo-section {
+    padding: 150px 0;
+    background-color: #d8cfbc;
+}
+
+.og-content-seo-container {
+    display: flex;
+    gap: 46px;
+}
+
+.og-content-seo-title {
+    color: var(--Blue-Grey-800, #212b36);
+    font-family: Roboto;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    /* 136.364% */
+}
+
+.og-content-seo-description {
+    color: var(--Secondary-secondary-400, #6d6b63);
+
+    /* Headlines/H6 */
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    /* 155.556% */
+
+    margin: 16px 0;
+}
+
+.og-content-seo-sub-title {
+    color: var(--Basic-Black, #01120d);
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    /* 150% */
+    margin-top: 46px;
+}
+
+.og-content-seo-card-container {
+    display: flex;
+    margin-top: 16px;
+}
+
+.og-content-seo-card-one {
+    padding: 28px;
+    background-color: #ddd4c2;
+    border-radius: 20px;
+    max-width: 380px;
+    width: 100%;
+}
+
+.og-content-seo-card-one .og-content-seo-card-text {
+    margin-top: 36px;
+    color: #111200;
+
+    /* Texts/Body1 */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+}
+
+.og-content-seo-card-two,
+.og-content-seo-card-three .og-content-seo-card-text {
+    color: #111200;
+
+    /* Texts/Body1 */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+}
+
+.cog-ontent-seo-card-right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-left: 14px;
+}
+
+.og-content-seo-card-two,
+.og-content-seo-card-three {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #ddd4c2;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.og-content-seo-bottom-description {
+    color: #6d6b63;
+    margin-top: 24px;
+}
+
+/*
+=============================================
+Content SEO Section End Here
+=============================================
+*/
+
+/* ====================================================
+     Keyword Research and Tracking Page End Hare
+  =====================================================
+*/
+
+/* ====================================================
+   Content SEO Page Start Hare
+  =====================================================
+*/
+
+.og-beyond-content-seo-section-heading {
+    text-align: left;
+}
+
+.og-beyond-content-seo-section-heading {
+    color: var(--Blue-Grey-800, #212b36);
+    font-family: Roboto;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    /* 68.182% */
+    padding-bottom: 20px;
+    margin-top: 10px;
+}
+
+.our-approach-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 31px 52px;
+    margin-top: 40px;
+}
+
+.our-approach-card-description {
+    color: rgba(64, 74, 61, 0.8);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 164%;
+    /* 22.96px */
+    padding: 20px 0;
+}
+
+.our-approach-container {
+    display: flex;
+    gap: 135px;
+    margin-top: 70px;
+}
+
+/* ====================================================
+     Content SEO Page End Hare
+  =====================================================
+*/
+
+/* ====================================================
+     Local SEO Page Start Hare
+  =====================================================
+*/
+
+.local-seo-our-approach-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 34px;
+    margin-bottom: 40px;
+}
+
+.our-approach-list-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 18px;
+    background-color: #f3efe8;
+    border-radius: 14px;
+}
+
+.our-approach-list-item-text {
+    color: var(--Secondary-secondary-400, #6d6b63);
+
+    /* Headlines/H6 */
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    /* 155.556% */
+}
+
+.scalable-seo-container {
+    display: flex;
+    gap: 98px;
+}
+
+.ecommerce-seo-description {
+    color: var(--Secondary-secondary-400, #6d6b63);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 164%;
+    /* 29.52px */
+    margin-bottom: 20px;
+}
+
+.ecommerce-seosection-title {
+    color: var(--Blue-Grey-800, #212b36);
+    font-family: Roboto;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 84px */
+    margin-bottom: 20px;
+}
+
+/* ====================================================
+     Local SEO Page End Hare
+  =====================================================
+*/
+
+.og-keyword-section-right-image {
+    width: 100%;
+}
+
+.dropdown_icon {
+    border: none;
+    background-color: transparent;
+    margin-top: 3px;
+}
