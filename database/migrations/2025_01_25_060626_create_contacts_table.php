@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('lname');
             $table->string('email');
             $table->string('phone');
-            $table->enum('subject', ['seo_optimization', 'data_integration','analytics_success','general_inquiry']);
+            $table->string('company_name');
+            $table->string('subject');
             $table->text('message')->nullable();
             $table->timestamps();
         });

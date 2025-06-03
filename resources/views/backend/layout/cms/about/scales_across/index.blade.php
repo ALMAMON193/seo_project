@@ -66,18 +66,6 @@
                                 </div>
                             </div>
                             {{--  Image --}}
-                            <div class="col-md-12">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Second Image</label>
-                                    <input type="file"
-                                           data-default-file="{{ !empty($data->background) && file_exists(public_path($data->background)) ? url($data->background) : url('backend/backgrounds/background-not.png') }}"
-                                           class="dropify form-control @error('background') is-invalid @enderror"
-                                           name="background" id="background">
-                                    @error('background')
-                                    <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div>
                             <button type="submit" class="btn btn-primary me-2">Submit</button>
                             <button type="reset" class="btn btn-outline-secondary" onclick="resetForm()">Cancel
                             </button>

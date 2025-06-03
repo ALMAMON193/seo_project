@@ -33,8 +33,8 @@
                             {{-- Title start --}}
                             <div class="form-group mb-3">
                                 <label class="form-lable">Title</label>
-                                <textarea type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
-                                          placeholder="Content Here...">{{ old('title') ?? ($banner->title ?? '') }}</textarea>
+                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title"
+                                          placeholder="Content Here..." value="{{ old('title') ?? ($banner->title ?? '') }}">
                                 @error('title')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -44,8 +44,8 @@
                             {{-- Content Start --}}
                             <div class="form-group mb-3">
                                 <label class="form-lable">Content</label>
-                                <textarea type="text" class="form-control @error('content') is-invalid @enderror" id="content" name="content"
-                                    placeholder="Content Here...">{{ old('content') ?? ($banner->content ?? '') }}</textarea>
+                                <input type="text" class="form-control @error('content') is-invalid @enderror"  name="content"
+                                    placeholder="Content Here..." value="{{ old('content') ?? ($banner->content ?? '') }}">
                                 @error('content')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror

@@ -77,17 +77,6 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Number of Member</label>
-                                    <input type="number" class="form-control @error('btn_text') is-invalid @enderror"
-                                           id="btn_text" name="btn_text" placeholder="Please Enter The Number"
-                                           value="{{ old('btn_text') ?? ($data->btn_text ?? '') }}">
-                                    @error('btn_text')
-                                    <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div>
                             {{-- background Image --}}
                             <button type="submit" class="btn btn-primary me-2">Submit</button>
                             <button type="reset" class="btn btn-outline-secondary" onclick="resetForm()">Cancel

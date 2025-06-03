@@ -196,6 +196,14 @@ main {
     font-style: italic !important;
 }
 
+.breadcrumbs-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 /* =======================
       Common Style End Here
    =======================
@@ -550,6 +558,7 @@ main {
     color: #01120d;
     font-weight: 700;
     margin-top: 10px;
+    font-style: italic;
 }
 
 .og-who-we-are-title {
@@ -900,6 +909,21 @@ main {
     transform: rotate(45deg);
 }
 
+.home-contact-form-select-container{
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.home-contact-form-select{
+    width: 100%;
+    background: transparent;
+    padding: 10px 10px 0 10px;
+    /* outline: none; */
+    border: none;
+}
+
 /* ============================
      Get In Touch End Hare
   ==============================
@@ -924,6 +948,9 @@ main {
     /* position: absolute; */
     /* bottom: 0px; */
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
     max-width: 1090px;
     /* margin-top: -100px; */
     margin-top: 100px;
@@ -969,6 +996,7 @@ main {
 
 .footer-content-title {
     color: #fffbf4;
+    text-wrap: nowrap;
 
     /* Headlines/H3 */
     font-family: var(--primary-font);
@@ -1055,6 +1083,8 @@ main {
     font-style: normal;
     font-weight: 700;
     line-height: 135%;
+    max-width: 70%;
+    margin: 0 auto;
 }
 
 .og-service-description-1 {
@@ -1066,7 +1096,7 @@ main {
     font-style: normal;
     font-weight: 400;
     line-height: 30px;
-    max-width: 950px;
+    max-width: 70%;
     margin: 0 auto;
 }
 
@@ -1344,13 +1374,11 @@ main {
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 25px;
     letter-spacing: 1px;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 16px;
 }
 
 /* ============================
@@ -1795,6 +1823,10 @@ main {
     text-transform: uppercase;
 }
 
+.og-lets-work-form-content{
+    width: 100%;
+}
+
 /* ============================
     Contact Us Banner start Here
   ==============================
@@ -1864,6 +1896,8 @@ main {
 
 .og-lets-work-content {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 64px;
 }
 
@@ -2070,11 +2104,31 @@ Keyword Research Section Start Here
 .og-keyword-section-title {
     color: var(--Blue-Grey-800, #212b36);
     font-family: Roboto;
-    font-size: 55px;
+    font-size: 42px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
-    /* 84px */
+}
+.og-keyword-section-subtitle{
+    color: var(--Blue-Grey-800, #212b36);
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.og-keyword-section-title-2{
+    color: var(--Blue-Grey-800, #212b36);
+    font-family: Roboto;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    margin: 20px 0;
+    /* 66px */
 }
 
 .og-keyword-section-description {
@@ -2099,6 +2153,20 @@ Keyword Research Section Start Here
     cursor: pointer;
     outline: none;
     border: 2px solid #111200;
+    margin-top: 20px;
+}
+
+.og-beyond-basic-keyword-card-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-align: center;
+}
+.og-beyond-basic-keyword-card-icon svg{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
 }
 
 /*
@@ -2152,17 +2220,18 @@ Beyond Basic Keyword Lists Section Start Here
     align-items: center;
     justify-content: space-between;
     margin-top: 51px;
+    gap: 40px;
 }
 
 .og-beyond-basic-keyword-card-title {
     margin-top: 20px;
-
     color: var(--Blue-Grey-800, #212b36);
     font-family: Roboto;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    text-align: center;
 }
 
 .og-beyond-basic-keyword-card-description {
@@ -2174,6 +2243,7 @@ Beyond Basic Keyword Lists Section Start Here
     line-height: 19.769px;
     /* 141.21% */
     margin-top: 8px;
+    text-align: center;
 }
 
 /*
@@ -2429,4 +2499,26 @@ Content SEO Section End Here
     border: none;
     background-color: transparent;
     margin-top: 3px;
+}
+
+.og-beyond-basic-keyword-left{
+    width: 50%;
+}
+.og-beyond-basic-keyword-left img{
+    width: 100%;
+    max-width: 100%;
+}
+
+.og-beyond-basic-keyword-right{
+    width: 50%;
+}
+
+#on-page-optimization{
+    padding: 40px 0 40px;
+}
+#og-data-analysis{
+    padding: 40px 0 40px;
+}
+#og-ecommerce{
+    padding-top: 0;
 }

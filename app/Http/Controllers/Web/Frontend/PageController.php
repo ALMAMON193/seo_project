@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers\Web\Frontend;
 
+use App\Enums\Page;
+use App\Models\CMS;
+use App\Enums\Section;
 use App\Http\Controllers\Controller;
 
 class PageController extends Controller
 {
     public function servicePage()
     {
-        return view('frontend.layouts.pages.service');
+        $serviceBanner  = CMS::where('page', Page::SERVICE->value)->where('section', Section::SERVICE_BANNER->value)->first();
+        return view('frontend.layouts.pages.service', compact('serviceBanner'));
     }
     public function aboutPage()
     {
-        return view('frontend.layouts.pages.about');
+        $about_scales = CMS::where('page', Page::ABOUT->value)->where('section', Section::ABOUT_SCALES_ACROSS->value)->first();
+        $real_experience = CMS::where('page', Page::ABOUT->value)->where('section', Section::ABOUT_REAL_EXPERIENCE->value)->first();
+        $seo_esp = CMS::where('page', Page::ABOUT->value)->where('section', Section::ABOUT_SEO_ESP->value)->first();
+        return view('frontend.layouts.pages.about', compact('about_scales','seo_esp', 'real_experience'));
     }
     public function localSeoPage()
     {

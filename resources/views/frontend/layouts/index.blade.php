@@ -1,3 +1,6 @@
+@php
+    $setting = \App\Models\SystemSetting::first();
+@endphp
 @extends('frontend.app')
 
 @section('content')
@@ -49,7 +52,7 @@
                             <p class="og-service-description">
                                 Smart content strategies that drive real traffic.
                             </p>
-                            <a href="{{ route('content-seo') }}" class="og-service-redirect-icon">
+                            <a href="{{ route('service') }}" class="og-service-redirect-icon">
                                 <img src="frontend/assets/images/svg/service_redirect_icon.svg" alt="" />
                             </a>
                         </div>
@@ -64,7 +67,7 @@
                             <p class="og-service-description">
                                 Outrank local competitors with local SEO optimization tailored to your market.
                             </p>
-                            <a href="{{ route('local-seo') }}" class="og-service-redirect-icon">
+                            <a href="{{ route('service') }}" class="og-service-redirect-icon">
                                 <img src="frontend/assets/images/svg/service_redirect_icon.svg" alt="" />
                             </a>
                         </div>
@@ -79,7 +82,7 @@
                             <p class="og-service-description">
                                 Smarter keyword strategies built on deep research and continuous performance tracking.
                             </p>
-                            <a href="{{ route('keyword-research') }}" class="og-service-redirect-icon">
+                            <a href="{{ route('service') }}" class="og-service-redirect-icon">
                                 <img src="frontend/assets/images/svg/service_redirect_icon.svg" alt="" />
                             </a>
                         </div>
@@ -94,7 +97,7 @@
                             <p class="og-service-description">
                                 Ensure your site’s technical foundation drives sustainable SEO growth.
                             </p>
-                            <a href="{{ route('technical-seo') }}" class="og-service-redirect-icon">
+                            <a href="{{ route('service') }}" class="og-service-redirect-icon">
                                 <img src="frontend/assets/images/svg/service_redirect_icon.svg" alt="" />
                             </a>
                         </div>
@@ -110,7 +113,7 @@
                                 Scalable strategies for complex websites that drive results, align teams, and deliver
                                 lasting impact.
                             </p>
-                            <a href="{{ route('enterprise-seo') }}" class="og-service-redirect-icon">
+                            <a href="{{ route('service') }}" class="og-service-redirect-icon">
                                 <img src="frontend/assets/images/svg/service_redirect_icon.svg" alt="" />
                             </a>
                         </div>
@@ -125,7 +128,7 @@
                             <p class="og-service-description">
                                 Craft content and strategy that work together to maximize rankings and conversions.
                             </p>
-                            <a href="{{ route('on-page-seo') }}" class="og-service-redirect-icon">
+                            <a href="{{ route('service') }}" class="og-service-redirect-icon">
                                 <img src="frontend/assets/images/svg/service_redirect_icon.svg" alt="" />
                             </a>
                         </div>
@@ -141,7 +144,7 @@
                                 Actionable insights from meaningful metrics so you can make confident, data-driven
                                 decisions.
                             </p>
-                            <a href="{{ route('data-analytics') }}" class="og-service-redirect-icon">
+                            <a href="{{ route('service') }}" class="og-service-redirect-icon">
                                 <img src="frontend/assets/images/svg/service_redirect_icon.svg" alt="" />
                             </a>
                         </div>
@@ -157,7 +160,7 @@
                                 Drive visibility and sales with eCommerce SEO built for product discovery, shopper intent,
                                 and platform performance.
                             </p>
-                            <a href="{{ route('ecommerce-seo') }}" class="og-service-redirect-icon">
+                            <a href="{{ route('service') }}" class="og-service-redirect-icon">
                                 <img src="frontend/assets/images/svg/service_redirect_icon.svg" alt="" />
                             </a>
                         </div>
@@ -252,10 +255,6 @@
                     may not
                     need. SEO can be the same.
                 </p>
-                <a href="{{ route('about') }}" class="og-btn-2">
-                    Learn more
-                    <img src="frontend/assets/images/svg/button_icon.svg" alt="">
-                </a>
             </div>
         </section>
         <!-- ================================Why Trust Us With Your SEO? Section End Here ========================================-->
@@ -327,7 +326,9 @@
                 <div class="og-seo-esp-bottom-card">
                     <h3 class="og-seo-esp-bottom-card-title">Curious if your SEO is working?</h3>
                     <p class="og-common-description">
-                        Let us take a look. <a href="{{ route('contact') }}" class="og-highlighted">Contact us today for a free audit and start
+                        Let us take a look. <a href="{{ route('contact') }}" class="og-highlighted">Contact us today for
+                            a
+                            free audit and start
                             improving the
                             metrics that actually
                             matter to your business.</a>
@@ -346,11 +347,8 @@
                 <div class="og-get-in-touch-info">
                     <div>
                         <h4 class="og-get-in-touch-info-title">
-                            Contact Information
+                            Contact SEO ESP
                         </h4>
-                        <p class="og-get-in-touch-info-sub-title">
-                            Say something to start a live chat!
-                        </p>
                     </div>
                     <ul class="og-get-in-touch-main-info">
                         <li class="og-get-in-touch-main-info-li">
@@ -363,7 +361,7 @@
                                     d="M13.0003 8.39477C15.1033 8.39477 16.0003 9.29177 16.0003 11.3948H18.0003C18.0003 8.16977 16.2253 6.39477 13.0003 6.39477V8.39477ZM16.4223 13.8378C16.2301 13.6631 15.9776 13.57 15.7181 13.578C15.4585 13.586 15.2123 13.6946 15.0313 13.8808L12.6383 16.3418C12.0623 16.2318 10.9043 15.8708 9.71228 14.6818C8.52028 13.4888 8.15928 12.3278 8.05228 11.7558L10.5113 9.36177C10.6977 9.1809 10.8064 8.93459 10.8144 8.67498C10.8225 8.41536 10.7292 8.16281 10.5543 7.97077L6.85928 3.90777C6.68432 3.71513 6.44116 3.59827 6.18143 3.58203C5.92171 3.56579 5.66588 3.65143 5.46828 3.82077L3.29828 5.68177C3.12539 5.85529 3.0222 6.08622 3.00828 6.33077C2.99328 6.58077 2.70728 12.5028 7.29928 17.0968C11.3053 21.1018 16.3233 21.3948 17.7053 21.3948C17.9073 21.3948 18.0313 21.3888 18.0643 21.3868C18.3088 21.3731 18.5396 21.2694 18.7123 21.0958L20.5723 18.9248C20.7417 18.7273 20.8276 18.4715 20.8115 18.2118C20.7954 17.9521 20.6788 17.7089 20.4863 17.5338L16.4223 13.8378Z"
                                     fill="white" />
                             </svg>
-                            +1012 3456 789
+                            {{ $setting->phone ?? '+1 123 456 789' }}
                         </li>
                         <li class="og-get-in-touch-main-info-li">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
@@ -372,7 +370,7 @@
                                     d="M22 4.39453H2V20.3945H22V4.39453ZM20 8.39453L12 13.3945L4 8.39453V6.39453L12 11.3945L20 6.39453V8.39453Z"
                                     fill="white" />
                             </svg>
-                            demo@gmail.com
+                            {{ $setting->email ?? 'info@yourdomain.com' }}
                         </li>
                         <li class="og-get-in-touch-main-info-li">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
@@ -381,27 +379,21 @@
                                     d="M12 1.89453C9.81276 1.89711 7.71584 2.76713 6.16923 4.31375C4.62261 5.86037 3.75259 7.95729 3.75001 10.1445C3.74739 11.9319 4.33124 13.6709 5.41201 15.0945C5.41201 15.0945 5.63701 15.3908 5.67376 15.4335L12 22.8945L18.3293 15.4298C18.3623 15.39 18.588 15.0945 18.588 15.0945L18.5888 15.0923C19.669 13.6692 20.2526 11.9311 20.25 10.1445C20.2474 7.95729 19.3774 5.86037 17.8308 4.31375C16.2842 2.76713 14.1873 1.89711 12 1.89453ZM12 13.1445C11.4067 13.1445 10.8266 12.9686 10.3333 12.6389C9.83995 12.3093 9.45543 11.8408 9.22837 11.2926C9.00131 10.7444 8.9419 10.1412 9.05765 9.55926C9.17341 8.97732 9.45913 8.44277 9.87869 8.02321C10.2982 7.60365 10.8328 7.31793 11.4147 7.20218C11.9967 7.08642 12.5999 7.14583 13.1481 7.37289C13.6962 7.59996 14.1648 7.98447 14.4944 8.47782C14.8241 8.97117 15 9.55119 15 10.1445C14.999 10.9399 14.6826 11.7024 14.1202 12.2648C13.5578 12.8271 12.7954 13.1435 12 13.1445Z"
                                     fill="white" />
                             </svg>
-                            132 Dartmouth Street Boston, <br>Massachusetts 02156 United States
+                            {{ $setting->office_address ?? '123 Main Street, Anytown, USA' }}
                         </li>
                     </ul>
                     <div class="og-get-in-touch-main-info-social-link">
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ $setting->youtube ?? '#' }}" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" class="injected-svg"
-                                data-src="https://cdn.hugeicons.com/icons/linkedin-02-solid-standard.svg"
+                                data-src="https://cdn.hugeicons.com/icons/youtube-02-solid.svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" role="img" color="#808080">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M1.5 9.5C1.5 9.22386 1.72386 9 2 9H6.5C6.77614 9 7 9.22386 7 9.5V22C7 22.2761 6.77614 22.5 6.5 22.5H2C1.72386 22.5 1.5 22.2761 1.5 22V9.5Z"
-                                    fill="#808080"></path>
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M1.5 4.25C1.5 2.73122 2.73122 1.5 4.25 1.5C5.76878 1.5 7 2.73122 7 4.25C7 5.76878 5.76878 7 4.25 7C2.73122 7 1.5 5.76878 1.5 4.25Z"
-                                    fill="#808080"></path>
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M9 9.5C9 9.22386 9.22386 9 9.5 9H14.0001C14.2762 9 14.5001 9.22386 14.5001 9.5V9.96448C15.2812 9.36032 16.2472 9.00024 17.2968 9.00024C19.8734 9.00024 22.5001 11.2013 22.5001 14.0002L22.4987 22.0001C22.4987 22.2762 22.2748 22.5 21.9987 22.5H17.5C17.2238 22.5 17 22.2761 17 22V15.7502C17 15.0599 16.4403 14.5002 15.75 14.5002C15.0597 14.5002 14.5001 15.0599 14.5001 15.7502V22C14.5001 22.2761 14.2762 22.5 14.0001 22.5H9.5C9.22386 22.5 9 22.2761 9 22V9.5Z"
+                                <path
+                                    d="M10 15V9L16 12L10 15ZM20 4H4C2.89 4 2 4.89 2 6V18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4Z"
                                     fill="#808080"></path>
                             </svg>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ $setting->facebook ?? '#' }}" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" class="injected-svg"
                                 data-src="https://cdn.hugeicons.com/icons/facebook-02-solid-rounded.svg"
@@ -411,7 +403,7 @@
                                     fill="#808080"></path>
                             </svg>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ $setting->instagram ?? '#' }}" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" class="injected-svg"
                                 data-src="https://cdn.hugeicons.com/icons/instagram-stroke-rounded.svg"
@@ -429,7 +421,7 @@
                     </div>
                 </div>
                 <div class="og-get-in-touch-form-container" id="og-lets-work-section">
-                    <form action="{{ route('contact.store') }}" method="POST">
+                    <form id="contactForm" action="{{ route('contact.store') }}" method="POST">
                         @csrf
                         <div class="og-get-in-touch-form">
                             <div class="og-get-in-touch-input">
@@ -455,40 +447,37 @@
                             </div>
                             <div class="og-get-in-touch-input">
                                 <label class="og-get-in-touch-input-label">Phone Number</label>
-                                <input class="og-get-in-touch-input-field" type="number" name="phone" required>
+                                <input class="og-get-in-touch-input-field" type="tel" name="phone" required>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 2" fill="none">
+                                    <path d="M0 0.726562H301.361" stroke="#8D8D8D" />
+                                </svg>
+                            </div>
+                            <div class="og-get-in-touch-input">
+                                <label class="og-get-in-touch-input-label">Company Name</label>
+                                <input class="og-get-in-touch-input-field" type="text" name="company_name" required>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 2" fill="none">
                                     <path d="M0 0.726562H301.361" stroke="#8D8D8D" />
                                 </svg>
                             </div>
                         </div>
 
-                        <div>
-                            <label for="" class="checkbox-title">Select Subject?</label>
-                            <div class="checkbox-group">
-                                <label class="checkbox-item">
-                                    <input name="subject" value="seo_optimization" type="radio" checked>
-                                    <span class="custom-checkbox"></span>
-                                    SEO Optimization
-                                </label>
-
-                                <label class="checkbox-item">
-                                    <input name="subject" value="data_integration" type="radio">
-                                    <span class="custom-checkbox"></span>
-                                    Data Integration
-                                </label>
-
-                                <label class="checkbox-item">
-                                    <input name="subject" value="analytics_success" type="radio">
-                                    <span class="custom-checkbox"></span>
-                                    Analytics Success
-                                </label>
-
-                                <label class="checkbox-item">
-                                    <input name="subject" value="general_inquiry" type="radio">
-                                    <span class="custom-checkbox"></span>
-                                    General Inquiry
-                                </label>
-                            </div>
+                        <div class="home-contact-form-select-container">
+                            <label class="og-get-in-touch-input-label">Select Topic</label>
+                            <select class="home-contact-form-select" name="subject" required>
+                                <option value="" selected disabled>Select Topic</option>
+                                <option value="content_seo">Content SEO</option>
+                                <option value="local_seo">Local SEO</option>
+                                <option value="keyword_research_and_tracking">Keyword Research and Tracking</option>
+                                <option value="technical_seo">Technical SEO</option>
+                                <option value="enterprise_seo">Enterprise SEO</option>
+                                <option value="on_page_optimization">On-Page Optimization</option>
+                                <option value="data_analysis">Data Analysis</option>
+                                <option value="ecommerce">eCommerce</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 2" fill="none">
+                                <path d="M0 0.726562H301.361" stroke="#8D8D8D" />
+                            </svg>
                         </div>
 
                         <div class="og-get-in-touch-input">
@@ -500,12 +489,154 @@
                             </svg>
                         </div>
 
+                        <!-- Status Messages -->
+                        <div id="formSuccess" class="og-form-message og-form-success" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>Thank you for your message! We will contact you soon.</span>
+                        </div>
+
+                        <div id="formError" class="og-form-message og-form-error" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            <span>There was an error submitting your form. Please try again.</span>
+                        </div>
+
                         <div class="send-message">
-                            <button class="og-btn">Send Message</button>
+                            <button type="submit" class="og-btn" id="submitButton">Send Message</button>
                         </div>
                     </form>
-
                 </div>
+
+                <style>
+                    /* Form Messages Styling */
+                    .og-form-message {
+                        padding: 15px;
+                        margin: 20px 0;
+                        border-radius: 4px;
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                    }
+
+                    .og-form-success {
+                        background-color: #f0fff4;
+                        color: #2d7d46;
+                        border: 1px solid #9ae6b4;
+                    }
+
+                    .og-form-error {
+                        background-color: #fff5f5;
+                        color: #c53030;
+                        border: 1px solid #fc8181;
+                    }
+
+                    .og-form-message svg {
+                        flex-shrink: 0;
+                    }
+
+                    /* Button loading state */
+                    .og-btn.loading {
+                        position: relative;
+                        pointer-events: none;
+                    }
+
+                    .og-btn.loading:after {
+                        content: "";
+                        position: absolute;
+                        width: 16px;
+                        height: 16px;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto;
+                        border: 3px solid transparent;
+                        border-top-color: #ffffff;
+                        border-radius: 50%;
+                        animation: button-loading-spinner 1s ease infinite;
+                    }
+
+                    @keyframes button-loading-spinner {
+                        from {
+                            transform: rotate(0turn);
+                        }
+
+                        to {
+                            transform: rotate(1turn);
+                        }
+                    }
+                </style>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const form = document.getElementById('contactForm');
+                        const submitButton = document.getElementById('submitButton');
+                        const successMessage = document.getElementById('formSuccess');
+                        const errorMessage = document.getElementById('formError');
+
+                        form.addEventListener('submit', function(e) {
+                            e.preventDefault();
+
+                            // Reset messages
+                            successMessage.style.display = 'none';
+                            errorMessage.style.display = 'none';
+
+                            // Set button to loading state
+                            submitButton.classList.add('loading');
+                            submitButton.disabled = true;
+                            submitButton.innerHTML = '<span style="visibility: hidden;">Send Message</span>';
+
+                            // Prepare form data
+                            const formData = new FormData(form);
+
+                            // Submit via fetch API
+                            fetch(form.action, {
+                                    method: 'POST',
+                                    body: formData,
+                                    headers: {
+                                        'Accept': 'application/json',
+                                        'X-Requested-With': 'XMLHttpRequest'
+                                    }
+                                })
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error('Network response was not ok');
+                                    }
+                                    return response.json();
+                                })
+                                .then(data => {
+                                    if (data.success) {
+                                        // Show success message
+                                        successMessage.style.display = 'flex';
+                                        form.reset();
+                                    } else {
+                                        // Show error message
+                                        errorMessage.style.display = 'flex';
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                    errorMessage.style.display = 'flex';
+                                })
+                                .finally(() => {
+                                    // Reset button state
+                                    submitButton.classList.remove('loading');
+                                    submitButton.disabled = false;
+                                    submitButton.innerHTML = 'Send Message';
+                                });
+                        });
+                    });
+                </script>
             </div>
         </section>
         <!-- ================================Get In Touch Section End Here ========================================-->

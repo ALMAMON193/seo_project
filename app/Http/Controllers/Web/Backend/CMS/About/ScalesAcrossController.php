@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Web\Backend\CMS\About;
 
+use Exception;
 use App\Enums\Page;
+use App\Models\CMS;
 use App\Enums\Section;
 use App\Helpers\Helper;
-use App\Http\Controllers\Controller;
-use App\Models\CMS;
-use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
+use App\Http\Controllers\Controller;
 
 class ScalesAcrossController extends Controller
 {
@@ -25,7 +25,7 @@ class ScalesAcrossController extends Controller
             'title' => 'nullable',
             'content' => 'nullable',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
-            'background' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+
         ]);
 
         try {
@@ -48,17 +48,7 @@ class ScalesAcrossController extends Controller
                 $randomString = Str::random(10);
                 $validatedData[$file] = Helper::fileUpload($request->file($file), 'cms/about', $randomString);
             }
-            // Handle the image
-            $file = 'background';
-            if ($request->hasFile($file)) {
-                // Delete the old file from the filesystem if it exists
-                if ($cms && isset($cms->{$file}) && file_exists(public_path($cms->{$file}))) {
-                    unlink(public_path($cms->{$file}));
-                }
-                // Upload the new file
-                $randomString = Str::random(10);
-                $validatedData[$file] = Helper::fileUpload($request->file($file), 'cms/about', $randomString);
-            }
+
             // Create or update the CMS record
             CMS::updateOrCreate(
                 ['page' => $validatedData['page'], 'section' => $validatedData['section']],

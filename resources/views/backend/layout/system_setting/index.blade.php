@@ -61,7 +61,7 @@
                                         <label>Phone:</label>
                                         <input type="text" class="form-control @error('phone') is-invalid @enderror"
                                             name="phone" placeholder="Phone"
-                                            value="{{ old('phone') ?? $setting->phone ?? '' }}">
+                                            value="{{ old('phone') ?? ($setting->phone ?? '') }}">
                                         @error('phone')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -73,7 +73,7 @@
                                         <label>Email:</label>
                                         <input type="text" class="form-control @error('email') is-invalid @enderror"
                                             name="email" placeholder="Email"
-                                            value="{{ old('email') ?? $setting->email ?? '' }}">
+                                            value="{{ old('email') ?? ($setting->email ?? '') }}">
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -83,17 +83,65 @@
 
                                     <div class="col-sm-4">
                                         <label>Office Address:</label>
-                                        <input type="text" class="form-control @error('office_address') is-invalid @enderror"
+                                        <input type="text"
+                                            class="form-control @error('office_address') is-invalid @enderror"
                                             name="office_address" placeholder="Office Address"
-                                            value="{{ old('office_address') ?? $setting->office_address ?? '' }}">
+                                            value="{{ old('office_address') ?? ($setting->office_address ?? '') }}">
                                         @error('office_address')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
+                                    {{-- compy right  --}}
+                                    <div class="col-sm-12">
+                                        <label>Copyright:</label>
+                                        <input type="text" class="form-control @error('copyright') is-invalid @enderror"
+                                            name="copyright" placeholder="Company Copyright"
+                                            value="{{ old('copyright') ?? ($setting->copyright ?? '') }}">
+                                        @error('copyright')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    {{-- facebook  --}}
+                                    <div class="col-sm-12">
+                                        <label>Facebook:</label>
+                                        <input type="text" class="form-control @error('facebook') is-invalid @enderror"
+                                            name="facebook" placeholder="Facebook Link"
+                                            value="{{ old('facebook') ?? ($setting->facebook ?? '') }}">
+                                        @error('facebook')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    {{-- instagram  --}}
+                                    <div class="col-sm-12">
+                                        <label>instagram:</label>
+                                        <input type="text" class="form-control @error('instagram') is-invalid @enderror"
+                                            name="instagram" placeholder="instagram Link"
+                                            value="{{ old('instagram') ?? ($setting->instagram ?? '') }}">
+                                        @error('instagram')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    {{-- youtube  --}}
+                                    <div class="col-sm-12">
+                                        <label>Youtube:</label>
+                                        <input type="text" class="form-control @error('youtube') is-invalid @enderror"
+                                            name="youtube" placeholder="Youtube Link"
+                                            value="{{ old('youtube') ?? ($setting->youtube ?? '') }}">
+                                        @error('youtube')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
-
                                 <button type="submit" class="btn btn-primary me-2">Submit</button>
                             </form>
                         </div>

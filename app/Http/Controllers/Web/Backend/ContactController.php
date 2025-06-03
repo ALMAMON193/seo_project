@@ -15,7 +15,8 @@ class ContactController extends Controller
             'lname' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|numeric',
-            'subject' => 'required|in:seo_optimization,data_integration,analytics_success,general_inquiry',
+            'company_name' => 'required|string|max:255',
+            'subject' => 'required|string|max:255',
             'message' => 'required|string',
         ]);
 
@@ -25,10 +26,11 @@ class ContactController extends Controller
         $contact->email = $request->email;
         $contact->phone = $request->phone;
         $contact->subject = $request->subject;
+        $contact->company_name = $request->company_name;
         $contact->message = $request->message;
         $contact->save();
 
-        return redirect()->back()->with('t-success', 'Thank you for contacting us!');
+        return response()->json(['success' => true]);
     }
     public function ContactContactPage(Request $request)
     {
@@ -38,7 +40,8 @@ class ContactController extends Controller
             'lname' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|numeric',
-            'subject' => 'required|in:seo_optimization,data_integration,analytics_success,general_inquiry',
+            'company_name' => 'required|string|max:255',
+            'subject' => 'required|string|max:255',
             'message' => 'required|string',
         ]);
 
@@ -47,11 +50,12 @@ class ContactController extends Controller
         $contact->lname = $request->lname;
         $contact->email = $request->email;
         $contact->phone = $request->phone;
+        $contact->company_name = $request->company_name;
         $contact->subject = $request->subject;
         $contact->message = $request->message;
         $contact->save();
 
-        return redirect()->back()->with('t-success', 'Thank you for contacting us!');
+       return response()->json(['success' => true]);
     }
 
 }

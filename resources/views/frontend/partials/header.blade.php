@@ -36,19 +36,19 @@
                       </div>
 
                     <ul class="og-dropdown-menu og-space-y-1" id="og-dropdownMenu" style="display: none;">
-                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="{{route('content-seo')}}">Content
+                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="/services/#og-content-seo">Content
                                 SEO</a></li>
-                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="{{route('local-seo')}}">Local
+                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="/services/#og-local_seo">Local
                                 SEO</a></li>
-                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="{{route('keyword-research')}}">Keyword Research and
+                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="/services/#og-keyword-research">Keyword Research and
                                 Tracking</a></li>
-                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="{{route('technical-seo')}}">Technical SEO</a></li>
-                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="{{route('enterprise-seo')}}">Enterprise SEO</a>
+                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="/services/#og-technical-seo">Technical SEO</a></li>
+                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="/services/#og-enterprise">Enterprise SEO</a>
                         </li>
-                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="{{route('on-page-seo')}}">On-Page
+                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="/services/#on-page-optimization">On-Page
                                 Optimization</a></li>
-                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="{{route('data-analytics')}}">Data Analysis</a></li>
-                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="{{route('ecommerce-seo')}}">eCommerce</a></li>
+                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="/services/#og-data-analysis">Off-PageData Analysis</a></li>
+                        <li class="og-dropdown-list"><a class="og-navlink hover:text-grey" href="/services/#og-ecommerce">eCommerce</a></li>
                     </ul>
                 </li>
 

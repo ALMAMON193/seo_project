@@ -1,5 +1,5 @@
 @php
-$setting = \App\Models\SystemSetting::first();
+    $setting = \App\Models\SystemSetting::first();
 @endphp
 @extends('frontend.app')
 @section('title', 'Contact Us | Contact Us')
@@ -11,15 +11,15 @@ $setting = \App\Models\SystemSetting::first();
                 <h1 class="text-white text-center og-contact-us-title">
                     Contact Us
                 </h1>
-                <p class="og-contact-us-path-title text-center">
-                    Home
+                <div class="breadcrumbs-container">
+                    <a class="og-about-us-path-title" href="{{ route('home') }}">Home</a>
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                         <path
                             d="M13.5703 11.22C13.5703 11.3134 13.537 11.3934 13.4703 11.46L8.25031 16.68C8.18365 16.7467 8.10365 16.78 8.01031 16.78C7.91698 16.78 7.83031 16.7467 7.75031 16.68L7.19031 16.12C7.11031 16.04 7.07031 15.9534 7.07031 15.86C7.07031 15.7667 7.11031 15.68 7.19031 15.6L11.5703 11.22L7.19031 6.82003C7.11031 6.75336 7.07031 6.67336 7.07031 6.58003C7.07031 6.4867 7.11031 6.40003 7.19031 6.32003L7.75031 5.76003C7.81698 5.68003 7.90365 5.64003 8.01031 5.64003C8.11698 5.64003 8.19698 5.68003 8.25031 5.76003L13.4703 10.96C13.537 11.0267 13.5703 11.1134 13.5703 11.22Z"
                             fill="#BDBDBD" />
                     </svg>
-                    Contact Uss
-                </p>
+                    <a class="og-about-us-path-title" href="{{ route('contact') }}">Contact US</a>
+                </div>
             </div>
         </section>
         <!-- ===========================Banner Section Start Here==============================================-->
@@ -38,7 +38,7 @@ $setting = \App\Models\SystemSetting::first();
                     <h3 class="og-information-title">Email Address</h3>
                     <div class="og-information-descrition">
                         <p>
-                            {{$setting->email ?? 'example@gmail.com'}}
+                            {{ $setting->email ?? 'example@gmail.com' }}
                         </p>
 
                     </div>
@@ -57,7 +57,7 @@ $setting = \App\Models\SystemSetting::first();
                     <h3 class="og-information-title">Phone Number</h3>
                     <div class="og-information-descrition">
                         <p>
-                           {{$setting->phone ?? '+1 123 456 789'}}
+                            {{ $setting->phone ?? '+1 123 456 789' }}
                         </p>
 
                     </div>
@@ -76,7 +76,7 @@ $setting = \App\Models\SystemSetting::first();
                     <h3 class="og-information-title">Office Address</h3>
                     <div class="og-information-descrition">
                         <p>
-                            {{$setting->address ?? '123 Main St, City, Country'}}
+                            {{ $setting->office_address ?? '123 Main St, City, Country' }}
                         </p>
 
                     </div>
@@ -98,14 +98,14 @@ $setting = \App\Models\SystemSetting::first();
                 Contact Us
             </button>
             <div class="og-lets-work-content">
-                <div>
-                    <h2 class="og-lets-work-form-title">Lets Work Together</h2>
+                <div class="og-lets-work-form-content">
+                    <h2 class="og-lets-work-form-title">Let's Work Together</h2>
                     <p class="og-lets-work-form-description">
-                        eady to take your social media presence to the next level? Let’s work together to create
-                        impactful
-                        strategies drive engagement, growth, and success for your brand.
+                        If you're ready to demystify SEO and focus on what drives real growth, I'd love to hear more about
+                        your business.
                     </p>
-                    <form action="{{ route('contact_page.contact.store') }}" method="POST">
+
+                    <form id="contactForm" action="{{ route('contact_page.contact.store') }}" method="POST">
                         @csrf
                         <div class="og-lets-work-form-input">
                             <input class="og-lets-work-form-input-field" type="text" name="fname"
@@ -120,8 +120,8 @@ $setting = \App\Models\SystemSetting::first();
                                 placeholder="Phone Number">
                         </div>
                         <div class="og-lets-work-form-input">
-                            <input class="og-lets-work-form-input-field" type="text" name="company"
-                            placeholder="Company Name" required>
+                            <input class="og-lets-work-form-input-field" type="text" name="company_name"
+                                placeholder="Company Name" required>
                         </div>
                         <select class="og-lets-work-form-input-field" style="margin-bottom: 24px;" name="subject" required>
                             <option value="" selected disabled>Service Type</option>
@@ -137,7 +137,29 @@ $setting = \App\Models\SystemSetting::first();
                         </select>
                         <textarea class="og-lets-work-form-input-field h-200" name="message" placeholder="How can I help you?" required></textarea>
 
-                        <button class="og-btn mt-5" type="submit">
+                        <!-- Notification Messages -->
+                        <div id="formSuccess" class="og-form-message og-form-success" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>Thank you for your message! We will contact you soon.</span>
+                        </div>
+
+                        <div id="formError" class="og-form-message og-form-error" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            <span>There was an error submitting your form. Please try again.</span>
+                        </div>
+
+                        <button class="og-btn mt-5" type="submit" id="submitButton">
                             Submit
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none">
@@ -148,39 +170,136 @@ $setting = \App\Models\SystemSetting::first();
                             </svg>
                         </button>
                     </form>
-
                 </div>
                 <div class="og-lets-work-img-content">
                     <img class="og-lets-work-img" src="{{ asset('frontend/assets/images/lets_work_together.png') }}"
                         alt="" class="og-banner-right-content-image">
                 </div>
             </div>
+
+            <style>
+                /* Notification Messages Styling */
+                .og-form-message {
+                    padding: 15px;
+                    margin: 15px 0;
+                    border-radius: 4px;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    font-size: 14px;
+                }
+
+                .og-form-success {
+                    background-color: #f0fff4;
+                    color: #2d7d46;
+                    border: 1px solid #9ae6b4;
+                }
+
+                .og-form-error {
+                    background-color: #fff5f5;
+                    color: #c53030;
+                    border: 1px solid #fc8181;
+                }
+
+                .og-form-message svg {
+                    flex-shrink: 0;
+                }
+
+                /* Button loading state */
+                .og-btn.loading {
+                    position: relative;
+                    pointer-events: none;
+                    padding-right: 40px;
+                }
+
+                .og-btn.loading svg {
+                    opacity: 0;
+                }
+
+                .og-btn.loading:after {
+                    content: "";
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    top: 0;
+                    right: 20px;
+                    bottom: 0;
+                    margin: auto;
+                    border: 3px solid transparent;
+                    border-top-color: #FFFBF4;
+                    border-radius: 50%;
+                    animation: button-loading-spinner 1s ease infinite;
+                }
+
+                @keyframes button-loading-spinner {
+                    from {
+                        transform: rotate(0turn);
+                    }
+
+                    to {
+                        transform: rotate(1turn);
+                    }
+                }
+            </style>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const form = document.getElementById('contactForm');
+                    const submitButton = document.getElementById('submitButton');
+                    const successMessage = document.getElementById('formSuccess');
+                    const errorMessage = document.getElementById('formError');
+
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+
+                        // Reset messages
+                        successMessage.style.display = 'none';
+                        errorMessage.style.display = 'none';
+
+                        // Set button to loading state
+                        submitButton.classList.add('loading');
+                        submitButton.disabled = true;
+
+                        // Prepare form data
+                        const formData = new FormData(form);
+
+                        // Submit via fetch API
+                        fetch(form.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'X-Requested-With': 'XMLHttpRequest'
+                                }
+                            })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                if (data.success) {
+                                    // Show success message
+                                    successMessage.style.display = 'flex';
+                                    form.reset();
+                                } else {
+                                    // Show error message
+                                    errorMessage.style.display = 'flex';
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                errorMessage.style.display = 'flex';
+                            })
+                            .finally(() => {
+                                // Reset button state
+                                submitButton.classList.remove('loading');
+                                submitButton.disabled = false;
+                            });
+                    });
+                });
+            </script>
         </section>
-        <!-- ===========================Lets Work Together section end Here==============================================-->
-        <!-- ===========================Location section end Here==============================================-->
-        {{-- <section class="container og-location">
-        <h4 class="og-location-title">Location</h4>
-        <div class="og-location-location-content">
-            <p class="og-location-location-name">Dhaka, Bangladesh</p>
-            <div class="og-location-location-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                    <circle cx="14.9999" cy="15" r="6.18714" transform="rotate(-45 14.9999 15)" stroke="#9B907F"
-                        stroke-width="2" />
-                    <circle cx="15" cy="15" r="1.76775" transform="rotate(-45 15 15)" fill="#9B907F"
-                        stroke="#9B907F" stroke-width="1.5" />
-                    <path
-                        d="M8.81257 15.0001L5 15.0002M14.9997 8.81295L14.9999 5.00031M24.9999 15.0002L21.1869 15.0001M14.9999 25.0002L14.9997 21.1872"
-                        stroke="#9B907F" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </div>
-        </div>
-        <div class="og-location-location-map-content">
-            <iframe class="og-location-location-map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d456.3816006891862!2d90.40468127355163!3d23.78113387292892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9b0ecf091b9%3A0x1c123e9ed4c43244!2sSoftvence%20Agency!5e0!3m2!1sen!2sbd!4v1745745331397!5m2!1sen!2sbd"
-                style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section> --}}
-        <!-- ===========================Location section end Here==============================================-->
     </main>
 @endsection

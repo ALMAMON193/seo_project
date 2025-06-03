@@ -1,70 +1,37 @@
-@extends('frontend.app')
-@section('Home','Technical SEO')
-@section('content')
-    <main class="og-bg-primary-color">
-        <!-- ===========================Banner Section Start Here==============================================-->
-        @include('frontend.partials.service_banner_header')
-        <!-- ===========================Banner Section End Here==============================================-->
-
-        <!-- ===========================Keyword Research Section Start Here==============================================-->
-        <section class="og-keyword-section">
-            <div class="container og-keyword-section-container">
-              <div class="og-keyword-section-left">
-                <h2 class="og-keyword-section-title">On-Page Optimization</h2>
-                <p class="og-keyword-section-description">
-                  Fine-Tuning Every Element of Your Web Pages—From Meta Tags,
-                  Headings, and Content Structure to Internal Linking and User
-                  Experience to Improve Search Engine Visibility, Enhance Relevance,
-                  and Drive Targeted Organic Traffic
-                </p>
-                <button class="og-keyword-section-btn">Get started</button>
-              </div>
-              <div class="og-keyword-section-right">
-                <img src="frontend/assets/images/person-writing-sticky-notes.png" alt="" class="og-keyword-section-right-image">
-              </div>
-            </div>
-          </section>
-          <section class="og-beyond-basic-keyword-section">
-            <div class="container">
-              <div class="our-approach-container">
+ <!-- =========================== Our approach Section Start Here ==============================================-->
+    <section class="og-beyond-basic-keyword-section">
+        <div class="container">
+            <div class="our-approach-container">
                 <div class="og-beyond-basic-keyword-left">
-                  <img src="frontend/assets/images/business-team.png" alt="investment-advisor" class="og-beyond-basic-keyword-left-image">
+                    <img src="{{ asset('frontend/assets/images/Technical-SEO.jpeg') }}" alt="investment-advisor" />
                 </div>
                 <div class="og-beyond-basic-keyword-right">
-                  <div>
-                    <h2 class="og-beyond-content-seo-section-heading">
-                      On-Page SEO Mastery
-                    </h2>
-                    <p class="og-beyond-basic-keyword-description">
-                      We don’t optimize in isolation—we optimize with intent.
-                    </p>
+                    <div>
+                        <h2 class="og-beyond-content-seo-section-heading">
+                            Technical SEO
+                        </h2>
+                        <p class="og-beyond-basic-keyword-description">
+                            Behind every high-performing site is clean, crawlable code. We
+                            audit and optimize your site structure, speed, indexing,
+                            mobile experience, and more, ensuring search engines can
+                            access and understand your content without friction.
+                        </p>
 
-                    <p class="og-beyond-basic-keyword-description">
-                      Our on-page work is based on the keyword strategy we create
-                      specifically for your site, targeting high-impact,
-                      low-competition keyword variations that support both
-                      short-term and long-term ranking goals.
-                    </p>
-                    <p class="og-beyond-basic-keyword-description">
-                      We fine-tune everything from meta tags and header structures
-                      to internal links, schema markup, and image optimization,
-                      ensuring each page aligns with your overall SEO strategy and
-                      has the best chance to rank and convert.
-                    </p>
-                    <p class="og-beyond-basic-keyword-description">
-                      It’s not about overloading a page with keywords. It’s about
-                      aligning structure, content, and intent to give search
-                      engines— and your users —precisely what they’re looking for.
-                    </p>
+                        <p class="og-beyond-basic-keyword-description">
+                            Whether you already have a development team or need one, we’ve
+                            got you covered. We can collaborate seamlessly with your
+                            in-house devs or connect you with one of our trusted technical
+                            partners to implement changes the right way.
+                        </p>
+                        <p class="og-beyond-basic-keyword-description">
+                            Our goal is to eliminate technical roadblocks and make sure
+                            your site’s foundation supports scalable, long-term growth.
+                        </p>
 
-                    <button class="og-keyword-section-btn">Get started</button>
-                  </div>
+                        <a href="{{ route('contact') }}" class="og-keyword-section-btn">Get started</a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </section>
-        <!-- ==========================Boost Your Online Visibility with Expert SEO Services start here====================================== -->
-        @include('frontend.partials.boost')
-        <!-- ==========================Boost Your Online Visibility with Expert SEO Services end here====================================== -->
-    </main>
-@endsection
+        </div>
+    </section>
+    <!-- =========================== Our approach Section End Here ==============================================-->

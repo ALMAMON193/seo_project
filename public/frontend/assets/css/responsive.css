@@ -1,13 +1,7 @@
 @media only screen and (min-width: 1600px) {
-    .subcribe-now {
-      margin-top: -50px;
-    }
   }
 
   @media only screen and (min-width: 1366px) and (max-width: 1599px) {
-    .subcribe-now {
-      margin-top: -50px;
-    }
     .og-banner-title {
       line-height: 64px;
     }
@@ -48,9 +42,6 @@
   @media only screen and (min-width: 1200px) and (max-width: 1365px) {
     .og-navbar {
       padding: 35px 30px;
-    }
-    .subcribe-now {
-      margin-top: -50px;
     }
 
     .og-who-we-are-list-title {
@@ -3493,7 +3484,7 @@
     .og-get-in-touch-form {
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr;   
       gap: 42px;
     }
 
@@ -3698,7 +3689,7 @@
     }
 
     .og-get-in-touch-form {
-      gap: 0px !important;
+      gap: 20px;
     }
 
     .og-seo-esp-list {

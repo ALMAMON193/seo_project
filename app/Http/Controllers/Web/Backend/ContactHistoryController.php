@@ -33,7 +33,7 @@ class ContactHistoryController extends Controller
                            <a href="#" onclick="deleteAlert(' . $data->id . ')" class="btn btn-danger text-white" title="Delete">
                                <i class="fa fa-times"></i>
                            </a>
-                          
+
                        </div>';
                     })
                     ->rawColumns(['action', 'message'])
@@ -51,7 +51,7 @@ class ContactHistoryController extends Controller
         try {
             $data = Contact::find($id);
             if (!$data) {
-                return response()->json(['success' => false, 'message' => 'Membership not found.'], 404);
+                return response()->json(['success' => false, 'message' => 'Data not found.'], 404);
             }
 
             // Delete the user membership
@@ -63,7 +63,7 @@ class ContactHistoryController extends Controller
         }
     }
 
-    //view contact details 
+    //view contact details
 
     public function view($id){
         $data = Contact::find($id);

@@ -46,17 +46,17 @@
             <ul class="menu-sub">
                 <!-- Home Submenu -->
                 <li class="menu-item {{ request()->routeIs('admin.cms.home.*') ? 'active open' : '' }}">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    {{-- <a href="javascript:void(0);" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons bx bx-home" style="color: #2A6880;"></i>
                         <div data-i18n="Home">Home</div>
-                    </a>
+                    </a> --}}
                     <ul class="menu-sub">
-                        <li class="menu-item {{ request()->routeIs('admin.cms.home.banner.index') ? 'active' : '' }}">
+                        {{-- <li class="menu-item {{ request()->routeIs('admin.cms.home.banner.index') ? 'active' : '' }}">
                             <a class="menu-link" href="{{ route('admin.cms.home.banner.index') }}">
                                 <i class="menu-icon tf-icons bx bx-image" style="color: #2A6880;"></i>
                                 <div data-i18n="Banner Section">Banner Section</div>
                             </a>
-                        </li>
+                        </li> --}}
                         {{-- <li class="menu-item {{ request()->routeIs('admin.cms.home.about.index') ? 'active' : '' }}">
                             <a class="menu-link" href="{{ route('admin.cms.home.about.index') }}">
                                 <i class="menu-icon tf-icons bx bx-info-circle" style="color: #2A6880;"></i>
@@ -96,35 +96,14 @@
                                 <div data-i18n="Service Banner">Service Banner</div>
                             </a>
                         </li>
-                        <li class="menu-item {{ request()->routeIs('admin.cms.home.service.index') ? 'active' : '' }}">
+                        {{-- <li class="menu-item {{ request()->routeIs('admin.cms.home.service.index') ? 'active' : '' }}">
                             <a class="menu-link" href="{{ route('admin.cms.home.service.index') }}">
                                 <i class="menu-icon tf-icons bx bx-briefcase" style="color: #2A6880;"></i>
                                 <div data-i18n="Service Section">Service Section</div>
                             </a>
-                        </li>
-                        <li class="menu-item {{ request()->routeIs('admin.cms.service.real_experience.index') ? 'active' : '' }}">
-                            <a class="menu-link" href="{{ route('admin.cms.service.real_experience.index') }}">
-                                <i class="menu-icon tf-icons bx bx-map" style="color: #2A6880;"></i>
-                                <div data-i18n="Service Local SEO">Service Local SEO</div>
-                            </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
-                <!-- Contact Submenu -->
-                {{-- <li class="menu-item {{ request()->routeIs('admin.cms.contact.*') ? 'active open' : '' }}">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-support" style="color: #2A6880;"></i>
-                        <div data-i18n="Contact">Contact</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item {{ request()->routeIs('admin.cms.contact.banner.index') ? 'active' : '' }}">
-                            <a class="menu-link" href="{{ route('admin.cms.contact.banner.index') }}">
-                                <i class="menu-icon tf-icons bx bx-image-alt" style="color: #2A6880;"></i>
-                                <div data-i18n="Contact Banner">Contact Banner</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li> --}}
                 <!-- About Us Submenu -->
                 <li class="menu-item {{ request()->routeIs('admin.cms.about-us.*') ? 'active open' : '' }}">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -181,7 +160,7 @@
         </li>
 
         <!-- Terms & Conditions -->
-        <li class="menu-item {{ request()->routeIs('admin.terms.condition.index') ? 'active' : '' }}">
+        {{-- <li class="menu-item {{ request()->routeIs('admin.terms.condition.index') ? 'active' : '' }}">
             <a class="menu-link" href="{{ route('admin.terms.condition.index') }}">
                 <i class="menu-icon tf-icons bx bx-file" style="color: #2A6880;"></i>
                 <div data-i18n="Terms & Conditions">Terms & Conditions</div>
@@ -194,7 +173,7 @@
                 <i class="menu-icon tf-icons bx bx-lock-alt" style="color: #2A6880;"></i>
                 <div data-i18n="Privacy Policy">Privacy Policy</div>
             </a>
-        </li>
+        </li> --}}
 
         <!-- Profile Settings -->
         <li class="menu-item {{ request()->routeIs('admin.profile') ? 'active' : '' }}">

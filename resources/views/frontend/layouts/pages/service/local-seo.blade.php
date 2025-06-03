@@ -1,13 +1,6 @@
-@extends('frontend.app')
-@section('Home','Technical SEO')
-@section('content')
-    <main class="og-bg-primary-color">
-        <!-- ===========================Banner Section Start Here==============================================-->
-        @include('frontend.partials.service_banner_header')
-        <!-- ===========================Banner Section End Here==============================================-->
 
         <!-- ===========================Keyword Research Section Start Here==============================================-->
-        <section class="og-keyword-section">
+        {{-- <section class="og-keyword-section" id="og-local_seo">
             <div class="container og-keyword-section-container">
                 <div class="og-keyword-section-left">
                     <h2 class="og-keyword-section-title">Local SEO</h2>
@@ -22,7 +15,7 @@
                     <img src="{{asset('frontend/assets/images/delivery-tracking-system.png')}}" alt=""  class="og-keyword-section-right-image" />
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- ===========================Keyword Research Section End Here==============================================-->
 
         <!-- =========================== Our approach Section Start Here ==============================================-->
@@ -31,15 +24,15 @@
                 <div class="our-approach-container">
                     <div class="og-beyond-basic-keyword-left">
                         <img
-                            src="{{asset('frontend/assets/images/businessman-talks-african.png')}}"
-                            alt="investment-advisor"
+                            src="{{asset('frontend/assets/images/delivery-tracking-system.png')}}"
+                            alt="Local SEO"
                             class="og-beyond-basic-keyword-left-image"
                         />
                     </div>
                     <div class="og-beyond-basic-keyword-right">
                         <div>
                             <h2 class="og-beyond-content-seo-section-heading">
-                                Our approach
+                                Local SEO
                             </h2>
                             <p class="og-beyond-basic-keyword-description">
                                 Winning in local search isn’t about being flawless—it’s about
@@ -119,16 +112,11 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <a href="{{ route('contact') }}" class="og-keyword-section-btn">Get started</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- =========================== Our approach Section End Here ==============================================-->
-
-
-        <!-- ==========================Boost Your Online Visibility with Expert SEO Services start here====================================== -->
-        @include('frontend.partials.boost')
-        <!-- ==========================Boost Your Online Visibility with Expert SEO Services end here====================================== -->
-    </main>
-@endsection

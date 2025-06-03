@@ -37,7 +37,10 @@ class SystemSettingController extends Controller
             'phone' => 'nullable|string|max:255',
             'email' => 'nullable|email|max:255',
             'office_address' => 'nullable|string|max:255',
-
+            'copyright' => 'nullable|string|max:255',
+            'youtube' => 'nullable|string|max:255',
+            'facebook' => 'nullable|string|max:255',
+            'instagram' => 'nullable|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -58,6 +61,10 @@ class SystemSettingController extends Controller
             $setting->phone = $request->phone;
             $setting->email = $request->email;
             $setting->office_address = $request->office_address;
+            $setting->copyright = $request->copyright;
+            $setting->youtube = $request->youtube;
+            $setting->facebook = $request->facebook;
+            $setting->instagram = $request->instagram;
 
             $setting->save();
             return back()->with('t-success', 'Updated successfully');

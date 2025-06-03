@@ -216,7 +216,7 @@
                         if (response.success === true) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Membership has been deleted.",
+                                text: "Data has been deleted.",
                                 icon: "success"
                             });
                         } else if (response.errors) {
