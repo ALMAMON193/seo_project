@@ -4,43 +4,30 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use Filament\Panel;
+use Filament\Models\Contracts\HasName;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-/**
- * @property mixed|string|null $avatar
- * @property int|mixed $age
- * @property mixed $lname
- * @property mixed $fname
- * @property mixed $bio
- * @property mixed $email
- * @property mixed $phone
- * @property mixed $dob
- * @property mixed $licence_image
- * @property mixed $teacherData
- * @property mixed $role
- * @property mixed $id
- * @property mixed $name
- * @property mixed $courses
- * @property mixed $firebaseTokens
- * @property mixed $device_token
- * @method teacher()
- * @method static create(array $array)
- * @method static where(string $string, mixed $input)
- * @method static find(mixed $id)
- */
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser,HasName
 {
     use HasFactory, Notifiable, SoftDeletes, Notifiable;
 
     public mixed $gender;
-
-
-
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+    }
+     public function getFilamentName(): string
+    {
+        return "{$this->fname} {$this->lname}";
+    }
     protected $guarded = [];
 
     /**
@@ -94,16 +81,5 @@ class User extends Authenticatable
 
         // Return only the path for web requests
         return $value;
-    }
-
-
-    public function memberships()
-    {
-        return $this->hasMany(UserMembership::class);
-    }
-
-    public function payments()
-    {
-        return $this->hasMany(Payment::class);
     }
 }

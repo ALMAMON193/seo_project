@@ -129,11 +129,13 @@ class SystemSettingController extends Controller
     public function profileUpdate(Request $request): \Illuminate\Http\RedirectResponse
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required'
+            'fname' => 'required',
+            'lname' => 'required',
+            'email' => 'required' . '|email|unique:users,email,' . Auth::user()->id,
         ]);
         $user = User::find(Auth::user()->id);
-        $user->name = $request->name;
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
         $user->email = $request->email;
         $user->save();
 

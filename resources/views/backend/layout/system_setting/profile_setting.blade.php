@@ -16,12 +16,26 @@
                                 @csrf
                                 <div class="form-group row mb-3">
                                     <div class="col-12">
-                                        <label class="form-lable">Name:</label>
+                                        <label class="form-lable">First Name:</label>
                                         <input type="text"
-                                            class="form-control form-control-md border-left-0 @error('first_name') is-invalid @enderror"
-                                            placeholder="Enter your name" name="name"
-                                            value="{{ Auth::user()->name ?? '' }}">
-                                        @error('first_name')
+                                            class="form-control form-control-md border-left-0 @error('fname') is-invalid @enderror"
+                                            placeholder="Enter your First Name" name="fname"
+                                            value="{{ Auth::user()->fname ?? '' }}">
+                                        @error('fname')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-3">
+                                    <div class="col-12">
+                                        <label class="form-lable">Last Name:</label>
+                                        <input type="text"
+                                            class="form-control form-control-md border-left-0 @error('lname') is-invalid @enderror"
+                                            placeholder="Enter your First Name" name="lname"
+                                            value="{{ Auth::user()->lname ?? '' }}">
+                                        @error('lname')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
