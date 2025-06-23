@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\ContentSEOResource\Pages;
 
-use App\Filament\Resources\ContentSEOResource;
-use Filament\Actions;
+use Illuminate\Support\Str;
+use Filament\Tables\Actions\CreateAction;
 use Filament\Resources\Pages\CreateRecord;
+use App\Filament\Resources\ContentSEOResource;
 
 class CreateContentSEO extends CreateRecord
 {

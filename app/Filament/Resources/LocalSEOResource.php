@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Models\CMS;
-use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
@@ -13,15 +12,15 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
-use App\Filament\Resources\ContentSEOResource\Pages;
+use App\Filament\Resources\LocalSEOResource\Pages;
 
-class ContentSEOResource extends Resource
+class LocalSEOResource extends Resource
 {
     protected static ?string $model = CMS::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Content SEO';
-    protected static ?string $navigationLabel = 'Content SEO';
+    protected static ?string $navigationGroup = 'Local SEO';
+    protected static ?string $navigationLabel = 'Local SEO';
 
     public static function form(Form $form): Form
     {
@@ -29,17 +28,16 @@ class ContentSEOResource extends Resource
             ->schema([
                 Grid::make(12)
                     ->schema([
-
                         Section::make('Content Details')
                             ->schema([
                                 TextInput::make('title')
                                     ->label('Title')
                                     ->maxLength(255)
-                                    ->required()
+
                                     ->columnSpanFull(),
                                 RichEditor::make('content')
                                     ->label('Content')
-                                    ->required()
+
                                     ->columnSpanFull(),
                                 TextInput::make('btn_text')
                                     ->label('Button Text')
@@ -58,14 +56,14 @@ class ContentSEOResource extends Resource
                             ])
                             ->columnSpan(8),
 
-                        Section::make('Page & Section Settings Local SEO')
+                        Section::make('Page & Section Settings')
                             ->schema([
                                 TextInput::make('page')
-                                    ->default('ServicePageContentSeo')
+                                    ->default('ServicePageLocalSeo')
                                     ->disabled()
                                     ->dehydrated(true),
                                 TextInput::make('section')
-                                    ->default('ServiceSectionContentSeo')
+                                    ->default('ServiceSectionLocalSeo')
                                     ->disabled()
                                     ->dehydrated(true),
                             ])
@@ -77,28 +75,35 @@ class ContentSEOResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([])
-            ->filters([])
-            ->actions([])
+            ->columns([
+                //
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-
+                    Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
 
     public static function getRelations(): array
     {
-        return [];
+        return [
+            //
+        ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListContentSEO::route('/'),
-            'create' => Pages\CreateContentSEO::route('/create'),
-            'edit' => Pages\EditContentSEO::route('/{record}/edit'),
+            'index' => Pages\ListLocalSEOS::route('/'),
+            'create' => Pages\CreateLocalSEO::route('/create'),
+            'edit' => Pages\EditLocalSEO::route('/{record}/edit'),
         ];
     }
-
 }

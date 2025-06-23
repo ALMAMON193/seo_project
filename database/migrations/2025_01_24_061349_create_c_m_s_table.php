@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -18,9 +18,11 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('sub_title')->nullable();
             $table->longText('content')->nullable();
-            $table->longText('sub_content')->nullable(); // This is correct
+            $table->longText('sub_content')->nullable();
             $table->string('image')->nullable();
+            $table->string('image_alt')->nullable();
             $table->string('background')->nullable();
+            $table->string('background_alt')->nullable();
             $table->string('btn_text')->nullable();
             $table->string('video')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');

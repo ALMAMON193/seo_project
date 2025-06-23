@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 /**
  * @method static updateOrCreate(array $array, array $validatedData)
@@ -11,7 +12,23 @@ use Illuminate\Database\Eloquent\Model;
  */
 class CMS extends Model
 {
-    protected $guarded = [];
+    protected $table = 'c_m_s';
+    protected $fillable = [
+        'page',
+        'section',
+        'title',
+        'sub_title',
+        'content',
+        'sub_content',
+        'image',
+        'image_alt',
+        'background',
+        'background_alt',
+        'btn_text',
+        'video',
+        'status',
+
+    ];
     public function getImageAttribute($value): string|null
     {
         if (filter_var($value, FILTER_VALIDATE_URL)) {
@@ -51,4 +68,16 @@ class CMS extends Model
         // Return only the path for web requests
         return $value;
     }
+    public function scopeLocalSeoItems(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageLocalSeoItem')
+            ->where('section', 'ServiceSectionLocalSeoItem');
+    }
+    //keyword research item
+   public function scopeKeywordResearchItems(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageKeywordResearchItem')
+            ->where('section', 'ServiceSectionKeywordResearchItem');
+    }
+
 }
