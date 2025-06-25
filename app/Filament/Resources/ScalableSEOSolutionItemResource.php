@@ -3,27 +3,29 @@
 namespace App\Filament\Resources;
 
 use App\Models\CMS;
+use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
-use Illuminate\Support\Facades\Log;
 use Filament\Forms\Components\Section;
+use App\Models\ScalableSEOSolutionItem;
 use Filament\Forms\Components\TextInput;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
-use App\Filament\Resources\KeywordResearchItemResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\ScalableSEOSolutionItemResource\Pages;
+use App\Filament\Resources\ScalableSEOSolutionItemResource\RelationManagers;
 
-
-class KeywordResearchItemResource extends Resource
+class ScalableSEOSolutionItemResource extends Resource
 {
     protected static ?string $model = CMS::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Keyword Research and Tracking';
-    protected static ?string $navigationLabel = 'Keyword Research Items';
+
+    protected static ?string $navigationGroup = 'Enterprise SEO';
+    protected static ?string $navigationLabel = 'Scalable SEO Solution Item';
+
 
     public static function form(Form $form): Form
     {
@@ -36,33 +38,17 @@ class KeywordResearchItemResource extends Resource
                                 TextInput::make('title')
                                     ->columnSpanFull()
                                     ->placeholder('For example: Keyword Research & Tracking'),
-                                TextInput::make('sub_title')
-                                    ->placeholder('Enter Sub Title')->columnSpanFull(),
-                                FileUpload::make('image')
-                                    ->label('Icon')
-                                    ->disk('public')
-                                    ->directory('keyword-research-items')
-                                    ->image() // Restrict to images
-                                    ->acceptedFileTypes(['image/*'])
-                                    ->imagePreviewHeight('150')
-                                    ->getUploadedFileNameForStorageUsing(function ($file) {
-                                        Log::info('Uploaded file name: ' . $file->getClientOriginalName());
-                                        return 'keyword-research-items/' . $file->getClientOriginalName();
-                                    })
-                                    ->columnSpanFull(),
-                                TextInput::make('image_alt')
-                                    ->placeholder('Enter Image Alt Text')->columnSpanFull(),
                             ])
                             ->columnSpan(8),
 
                         Section::make('Page & Section Settings')
                             ->schema([
                                 TextInput::make('page')
-                                    ->default('ServicePageKeywordResearchItem')
+                                    ->default('ServicePageScalableSeoItem')
                                     ->disabled()
                                     ->dehydrated(true),
                                 TextInput::make('section')
-                                    ->default('ServiceSectionKeywordResearchItem')
+                                    ->default('ServiceSectionScalableSeoItem')
                                     ->disabled()
                                     ->dehydrated(true),
                             ])
@@ -75,7 +61,7 @@ class KeywordResearchItemResource extends Resource
     {
         return $table
             ->modifyQueryUsing(function (Builder $query) {
-                return $query->keywordResearchItems();
+                return $query->scalableSeoSolutionsItems();
             })
             ->columns([
                 Tables\Columns\TextColumn::make('title')
@@ -83,19 +69,6 @@ class KeywordResearchItemResource extends Resource
                     ->sortable()
                     ->limit(30)
                     ->searchable(),
-                Tables\Columns\TextColumn::make('sub_title')
-                    ->label('Sub Title')
-                    ->sortable()
-                    ->limit(30)
-                    ->searchable(),
-                ImageColumn::make('image')
-                    ->disk('public')
-                    ->circular()
-                    ->getStateUsing(function ($record) {
-
-                        return $record->image;
-                    })
-                    ->defaultImageUrl(url('/images/placeholder.png')),
             ])
             ->filters([
                 //
@@ -121,9 +94,9 @@ class KeywordResearchItemResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListKeywordResearchItems::route('/'),
-            'create' => Pages\CreateKeywordResearchItem::route('/create'),
-            'edit' => Pages\EditKeywordResearchItem::route('/{record}/edit'),
+            'index' => Pages\ListScalableSEOSolutionItems::route('/'),
+            'create' => Pages\CreateScalableSEOSolutionItem::route('/create'),
+            'edit' => Pages\EditScalableSEOSolutionItem::route('/{record}/edit'),
         ];
     }
 }
