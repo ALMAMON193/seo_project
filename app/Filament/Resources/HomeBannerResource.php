@@ -7,52 +7,44 @@ use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
-use App\Models\KeywordResearch;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\KeywordResearchResource\Pages;
-use App\Filament\Resources\KeywordResearchResource\RelationManagers;
+use App\Filament\Resources\HomeBannerResource\Pages;
 
-class KeywordResearchResource extends Resource
+class HomeBannerResource extends Resource
 {
     protected static ?string $model = CMS::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Keyword Research and Tracking';
-    protected static ?string $navigationLabel = 'Keyword Research';
+    protected static ?string $navigationGroup = 'Home Page';
+    protected static ?string $navigationLabel = 'Banner Content';
 
+    /**
+     * Configure the form for creating/editing records.
+     */
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Grid::make(12)
                     ->schema([
-
                         Section::make('Content Details')
                             ->schema([
-                                TextInput::make('title')
+                                RichEditor::make('title')
                                     ->label('Title')
-                                    ->maxLength(255)
-                                    ->placeholder('For example: Keyword Research & Tracking')
-                                    ->columnSpanFull(),
-
-                                TextInput::make('sub_title')
-                                    ->label('Title')
-                                    ->maxLength(255)
-                                    ->placeholder('For example: We go far beyond basic keyword lists. ')
+                                    ->required()
+                                    ->toolbarButtons(['h1'])
                                     ->columnSpanFull(),
                                 RichEditor::make('content')
                                     ->label('Content')
-                                    ->placeholder('For example: Our process begins with in-depth research to identify keyword variations that have lower competition but high strategic value. By targeting these, we help your site build topical relevance, making it easier to rank for broader, more competitive terms over time. ')
+                                    ->required()
                                     ->columnSpanFull(),
                                 FileUpload::make('image')
                                     ->label('Image')
@@ -67,14 +59,14 @@ class KeywordResearchResource extends Resource
                             ])
                             ->columnSpan(8),
 
-                        Section::make('Page & Section Settings Local SEO')
+                        Section::make('Page & Section Settings')
                             ->schema([
                                 TextInput::make('page')
-                                    ->default('ServicePageKeywordResearch')
+                                    ->default('HomePageBanner')
                                     ->disabled()
                                     ->dehydrated(true),
                                 TextInput::make('section')
-                                    ->default('ServiceSectionKeywordResearch')
+                                    ->default('HomeSectionBanner')
                                     ->disabled()
                                     ->dehydrated(true),
                             ])
@@ -83,30 +75,39 @@ class KeywordResearchResource extends Resource
             ]);
     }
 
+    /**
+     * Configure the table for listing records.
+     */
     public static function table(Table $table): Table
     {
         return $table
             ->modifyQueryUsing(function (Builder $query) {
-                return $query->keywordResearch();
+                return $query->homeBanner();
             })
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->label('Title')
                     ->sortable()
-                    ->searchable()->limit(30)
-                    ->formatStateUsing(fn(string $state): string => strip_tags($state)),
+                    ->searchable()
+                    ->limit(30)
+                    ->formatStateUsing(fn(?string $state): string => strip_tags($state ?? '')),
                 Tables\Columns\TextColumn::make('content')
                     ->label('Content')
                     ->sortable()
-                    ->searchable()->limit(30)->formatStateUsing(fn(string $state): string => strip_tags($state)),
-                ImageColumn::make('image'),
+                    ->searchable()
+                    ->limit(30)
+                    ->formatStateUsing(fn(?string $state): string => strip_tags($state ?? '')),
+                ImageColumn::make('image')
+                    ->label('Image'),
                 Tables\Columns\TextColumn::make('image_alt')
                     ->label('Image Alt Text')
                     ->sortable()
-                    ->searchable()->limit(30)->formatStateUsing(fn(string $state): string => strip_tags($state)),
+                    ->searchable()
+                    ->limit(30)
+                    ->formatStateUsing(fn(?string $state): string => strip_tags($state ?? '')),
             ])
             ->filters([
-                //
+                // Add filters if needed
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -119,19 +120,25 @@ class KeywordResearchResource extends Resource
             ]);
     }
 
+    /**
+     * Define related models.
+     */
     public static function getRelations(): array
     {
         return [
-            //
+            // Add relations if needed
         ];
     }
 
+    /**
+     * Define the resource's routes.
+     */
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListKeywordResearch::route('/'),
-            'create' => Pages\CreateKeywordResearch::route('/create'),
-            'edit' => Pages\EditKeywordResearch::route('/{record}/edit'),
+            'index' => Pages\ListHomeBanners::route('/'),
+            'create' => Pages\CreateHomeBanner::route('/create'),
+            'edit' => Pages\EditHomeBanner::route('/{record}/edit'),
         ];
     }
 }

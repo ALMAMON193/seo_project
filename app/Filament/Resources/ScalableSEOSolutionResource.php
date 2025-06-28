@@ -12,6 +12,7 @@ use App\Models\ScalableSEOSolution;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -24,7 +25,7 @@ class ScalableSEOSolutionResource extends Resource
     protected static ?string $model = CMS::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-      protected static ?string $navigationGroup = 'Enterprise SEO';
+    protected static ?string $navigationGroup = 'Enterprise SEO';
     protected static ?string $navigationLabel = 'Scalable SEO Solutions';
 
     public static function form(Form $form): Form
@@ -66,14 +67,27 @@ class ScalableSEOSolutionResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(function (Builder $query) {
+                return $query->scalableSeoSolutions();
+            })
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('title')
+                    ->label('Title')
+                    ->sortable()
+                    ->searchable()->limit(30)
+                    ->formatStateUsing(fn(string $state): string => strip_tags($state)),
+                Tables\Columns\TextColumn::make('content')
+                    ->label('Content')
+                    ->sortable()
+                    ->searchable()->limit(30)->formatStateUsing(fn(string $state): string => strip_tags($state)),
+
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

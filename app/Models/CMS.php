@@ -30,12 +30,57 @@ class CMS extends Model
         'meta_title',
         'meta_description',
         'meta_keywords',
+        'designation'
     ];
 
+    //content seo
+    public function scopeContentSeo(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageContentSeo')
+            ->where('section', 'ServiceSectionContentSeo');
+    }
+    //e-commerce seo
+    public function scopeEcommerceSeo(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageECommerceSeo')
+            ->where('section', 'ServiceSectionECommerceSeo');
+    }
+    //enterprise seo
+    public function scopeEnterpriseSeo(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageEnterpriseSeo')
+            ->where('section', 'ServiceSectionEnterpriseSeo');
+    }
+    //scalable seo
+    public function scopeScalableSeoSolutions(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageScalableSeo')
+            ->where('section', 'ServiceSectionScalableSeo');
+    }
+    //local seo
+    public function scopeDataAnalysis(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageDataAnalysisSeo')
+            ->where('section', 'ServiceSectionDataAnalysisSeo');
+    }
+
+    //local seo
+    public function scopeLocalSeo(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageLocalSeo')
+            ->where('section', 'ServiceSectionLocalSeo');
+    }
+    //local seo item
     public function scopeLocalSeoItems(Builder $query): Builder
     {
         return $query->where('page', 'ServicePageLocalSeoItem')
             ->where('section', 'ServiceSectionLocalSeoItem');
+    }
+    //keyword research
+    public function scopeKeywordResearch(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageKeywordResearch')
+            ->where('section', 'ServiceSectionKeywordResearch');
     }
     //keyword research item
     public function scopeKeywordResearchItems(Builder $query): Builder
@@ -43,9 +88,41 @@ class CMS extends Model
         return $query->where('page', 'ServicePageKeywordResearchItem')
             ->where('section', 'ServiceSectionKeywordResearchItem');
     }
+
     public function scopeScalableSeoSolutionsItems(Builder $query): Builder
     {
         return $query->where('page', 'ServicePageScalableSeoItem')
             ->where('section', 'ServiceSectionScalableSeoItem');
+    }
+    //on page optimization
+    public function scopeOnPageOptimization(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageOnePageOptimizationSeo')
+            ->where('section', 'ServiceSectionOnePageOptimizationSeo');
+    }
+    //service banner
+    public function scopeServiceBannerSection(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageBanner')
+            ->where('section', 'ServiceSectionBanner');
+    }
+    //technology
+    public function scopeTechnicalSeo(Builder $query): Builder
+    {
+        return $query->where('page', 'ServicePageTechnicalSeo')
+            ->where('section', 'ServiceSectionTechnicalSeo');
+    }
+
+    //home banner
+    public function scopeHomeBanner(Builder $query): Builder
+    {
+        return $query->where('page', 'HomePageBanner')
+            ->where('section', 'HomeSectionBanner');
+    }
+    // home about
+    public function scopeHomeAboutUS(Builder $query): Builder
+    {
+        return $query->where('page', 'HomePageAboutUS')
+            ->where('section', 'HomeSectionAboutUS');
     }
 }

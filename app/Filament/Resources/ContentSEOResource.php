@@ -11,8 +11,10 @@ use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\ContentSEOResource\Pages;
 
 class ContentSEOResource extends Resource
@@ -77,13 +79,32 @@ class ContentSEOResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([])
+            ->modifyQueryUsing(function (Builder $query) {
+                return $query->contentSeo();
+            })
+            ->columns([
+                Tables\Columns\TextColumn::make('title')
+                    ->label('Title')
+                    ->sortable()
+                    ->searchable()->limit(30)
+                    ->formatStateUsing(fn(string $state): string => strip_tags($state)),
+                Tables\Columns\TextColumn::make('content')
+                    ->label('Content')
+                    ->sortable()
+                    ->searchable()->limit(30)->formatStateUsing(fn(string $state): string => strip_tags($state)),
+                ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('image_alt')
+                    ->label('Image Alt Text')
+                    ->sortable()
+                    ->searchable()->limit(30)->formatStateUsing(fn(string $state): string => strip_tags($state)),
+            ])
             ->filters([])
-            ->actions([])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-
-                ]),
+                Tables\Actions\BulkActionGroup::make([]),
             ]);
     }
 
@@ -100,5 +121,4 @@ class ContentSEOResource extends Resource
             'edit' => Pages\EditContentSEO::route('/{record}/edit'),
         ];
     }
-
 }

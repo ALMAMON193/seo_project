@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Models\CMS;
+use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
@@ -10,10 +11,11 @@ use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\DataAnalysisResource\Pages;
-
 
 class DataAnalysisResource extends Resource
 {
@@ -24,6 +26,11 @@ class DataAnalysisResource extends Resource
     protected static ?string $navigationGroup = 'Data Analysis SEO';
     protected static ?string $navigationLabel = 'Data Analysis SEO';
 
+
+
+    /**
+     * Configure the form for creating/editing records.
+     */
     public static function form(Form $form): Form
     {
         return $form
@@ -36,9 +43,11 @@ class DataAnalysisResource extends Resource
                                     ->label('Title')
                                     ->maxLength(255)
                                     ->default('Data Analysis')
+                                    ->required()
                                     ->columnSpanFull(),
                                 RichEditor::make('content')
                                     ->label('Content')
+                                    ->required()
                                     ->columnSpanFull(),
                                 TextInput::make('btn_text')
                                     ->label('Button Text')
@@ -73,17 +82,37 @@ class DataAnalysisResource extends Resource
             ]);
     }
 
+    /**
+     * Configure the table for listing records.
+     */
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(function (Builder $query) {
+                return $query->dataAnalysis();
+            })
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('title')
+                    ->label('Title')
+                    ->sortable()
+                    ->searchable()->limit(30)
+                    ->formatStateUsing(fn(string $state): string => strip_tags($state)),
+                Tables\Columns\TextColumn::make('content')
+                    ->label('Content')
+                    ->sortable()
+                    ->searchable()->limit(30)->formatStateUsing(fn(string $state): string => strip_tags($state)),
+                ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('image_alt')
+                    ->label('Image Alt Text')
+                    ->sortable()
+                    ->searchable()->limit(30)->formatStateUsing(fn(string $state): string => strip_tags($state)),
             ])
             ->filters([
-                //
+                // Add filters if needed
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -92,13 +121,19 @@ class DataAnalysisResource extends Resource
             ]);
     }
 
+    /**
+     * Define related models.
+     */
     public static function getRelations(): array
     {
         return [
-            //
+            // Add relations if needed
         ];
     }
 
+    /**
+     * Define the resource's routes.
+     */
     public static function getPages(): array
     {
         return [
