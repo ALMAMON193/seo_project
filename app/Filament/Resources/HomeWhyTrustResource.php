@@ -7,28 +7,25 @@ use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\HomeWhyTrust;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
-use App\Filament\Resources\HomeBannerResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\HomeWhyTrustResource\Pages;
+use App\Filament\Resources\HomeWhyTrustResource\RelationManagers;
 
-class HomeBannerResource extends Resource
+class HomeWhyTrustResource extends Resource
 {
     protected static ?string $model = CMS::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
     protected static ?string $navigationGroup = 'Home Page';
-    protected static ?string $navigationLabel = 'Banner Content';
+    protected static ?string $navigationLabel = 'Why Trust Us';
 
-    /**
-     * Configure the form for creating/editing records.
-     */
     public static function form(Form $form): Form
     {
         return $form
@@ -37,36 +34,21 @@ class HomeBannerResource extends Resource
                     ->schema([
                         Section::make('Content Details')
                             ->schema([
-                                RichEditor::make('title')
-                                    ->label('Title')
-
-                                    ->toolbarButtons(['h1'])
-                                    ->columnSpanFull(),
                                 RichEditor::make('content')
                                     ->label('Content')
+                                    ->columnSpanFull(),
 
-                                    ->columnSpanFull(),
-                                FileUpload::make('image')
-                                    ->label('Image')
-                                    ->image()
-                                    ->disk('public')
-                                    ->directory('cms-images')
-                                    ->columnSpanFull(),
-                                TextInput::make('image_alt')
-                                    ->label('Image Alt Text')
-                                    ->maxLength(255)
-                                    ->columnSpanFull(),
                             ])
                             ->columnSpan(8),
 
                         Section::make('Page & Section Settings')
                             ->schema([
                                 TextInput::make('page')
-                                    ->default('HomePageBanner')
+                                    ->default('HomePageWhyTrustWithUs')
                                     ->disabled()
                                     ->dehydrated(true),
                                 TextInput::make('section')
-                                    ->default('HomeSectionBanner')
+                                    ->default('HomeSectionWhyTrustWithUs')
                                     ->disabled()
                                     ->dehydrated(true),
                             ])
@@ -75,39 +57,24 @@ class HomeBannerResource extends Resource
             ]);
     }
 
-    /**
-     * Configure the table for listing records.
-     */
     public static function table(Table $table): Table
     {
         return $table
             ->modifyQueryUsing(function (Builder $query) {
-                return $query->homeBanner();
+                return $query->homeWhyTrust();
             })
             ->columns([
-                Tables\Columns\TextColumn::make('title')
-                    ->label('Title')
-                    ->sortable()
-                    ->searchable()
-                    ->limit(30)
-                    ->formatStateUsing(fn(?string $state): string => strip_tags($state ?? '')),
+
                 Tables\Columns\TextColumn::make('content')
                     ->label('Content')
                     ->sortable()
                     ->searchable()
-                    ->limit(30)
+                    ->limit(130)
                     ->formatStateUsing(fn(?string $state): string => strip_tags($state ?? '')),
-                ImageColumn::make('image')
-                    ->label('Image'),
-                Tables\Columns\TextColumn::make('image_alt')
-                    ->label('Image Alt Text')
-                    ->sortable()
-                    ->searchable()
-                    ->limit(30)
-                    ->formatStateUsing(fn(?string $state): string => strip_tags($state ?? '')),
+
             ])
             ->filters([
-                // Add filters if needed
+                //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -120,25 +87,19 @@ class HomeBannerResource extends Resource
             ]);
     }
 
-    /**
-     * Define related models.
-     */
     public static function getRelations(): array
     {
         return [
-            // Add relations if needed
+            //
         ];
     }
 
-    /**
-     * Define the resource's routes.
-     */
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListHomeBanners::route('/'),
-            'create' => Pages\CreateHomeBanner::route('/create'),
-            'edit' => Pages\EditHomeBanner::route('/{record}/edit'),
+            'index' => Pages\ListHomeWhyTrusts::route('/'),
+            'create' => Pages\CreateHomeWhyTrust::route('/create'),
+            'edit' => Pages\EditHomeWhyTrust::route('/{record}/edit'),
         ];
     }
 }

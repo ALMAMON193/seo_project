@@ -125,4 +125,16 @@ class CMS extends Model
         return $query->where('page', 'HomePageAboutUS')
             ->where('section', 'HomeSectionAboutUS');
     }
+    //home about us item
+    public function scopeHomeAboutUSItems(Builder $query): Builder
+    {
+        return $query->where('page', 'HomePageAboutUSItem')
+            ->where('section', 'HomeSectionAboutUSItem');
+    }
+    //home we trust
+    public function scopeHomeWhyTrust(Builder $query): Builder
+    {
+        return $query->where('page', 'HomePageWhyTrustWithUs')
+            ->where('section', 'HomeSectionWhyTrustWithUs');
+    }
 }

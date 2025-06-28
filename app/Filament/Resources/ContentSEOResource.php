@@ -37,11 +37,11 @@ class ContentSEOResource extends Resource
                                 TextInput::make('title')
                                     ->label('Title')
                                     ->maxLength(255)
-                                    ->required()
+
                                     ->columnSpanFull(),
                                 RichEditor::make('content')
                                     ->label('Content')
-                                    ->required()
+
                                     ->columnSpanFull(),
                                 TextInput::make('btn_text')
                                     ->label('Button Text')
