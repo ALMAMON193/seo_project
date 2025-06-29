@@ -21,7 +21,7 @@ class TechnicalSEOResource extends Resource
 {
     protected static ?string $model = CMS::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
 
     protected static ?string $navigationGroup = 'Technical SEO';
     protected static ?string $navigationLabel = 'Technical SEO';

@@ -20,7 +20,7 @@ class LocalSEOResource extends Resource
 {
     protected static ?string $model = CMS::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     protected static ?string $navigationGroup = 'Local SEO';
     protected static ?string $navigationLabel = 'Local SEO';
 

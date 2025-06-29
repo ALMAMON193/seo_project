@@ -22,7 +22,7 @@ use App\Filament\Resources\OnPageOptimizationResource\RelationManagers;
 class OnPageOptimizationResource extends Resource
 {
     protected static ?string $model = CMS::class;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     protected static ?string $navigationGroup = 'One Page Optimization SEO';
     protected static ?string $navigationLabel = 'On Page Optimization SEO';
 

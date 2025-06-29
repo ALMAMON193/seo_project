@@ -21,7 +21,7 @@ class ScalableSEOSolutionItemResource extends Resource
 {
     protected static ?string $model = CMS::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
 
     protected static ?string $navigationGroup = 'Enterprise SEO';
     protected static ?string $navigationLabel = 'Scalable SEO Solution Item';

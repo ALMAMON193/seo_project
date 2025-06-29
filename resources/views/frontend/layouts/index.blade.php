@@ -2,36 +2,48 @@
     $setting = \App\Models\SystemSetting::first();
 @endphp
 @extends('frontend.app')
-
+@section('title', 'Home Page | Search Engine Optimization Services')
 @section('content')
     <main class="og-bg-primary-color">
 
         <!-- =============================== Banner Section Start Here ======================================-->
+        <!-- frontend/layouts/index.blade.php -->
         <section class="container og-banner-content">
             <div class="og-banner-left-content">
                 <h2 class="og-banner-title">
-                    SEO ESP: Bringing Clarity to Search Strategy
+                    {{ $homeBanner->title ?? 'SEO ESP: Bringing Clarity to Search Strategy' }}
                 </h2>
                 <p class="og-banner-description">
-                    <span class="og-highlighted">SEO (Search Engine Optimization)</span> is often treated like a
-                    buzzword—misunderstood, misused, and sometimes overpromised. But at its core, SEO is both art and
-                    science: the process of attracting unpaid (organic) visits to your website through strategic content and
-                    technical optimization.
-                    Unlike SEM (Search Engine Marketing), which relies on paid ads, SEO is an investment that builds
-                    long-term value. It compounds over time, earning visibility, trust, and traffic that doesn’t disappear
-                    the second your ad budget runs out.At SEO ESP, we are a results-first bespoke consultancy focused on
-                    cutting through the noise. We don’t sell fluff. We don’t push bloated packages. We offer practical and
-                    effective strategies tailored to your business, and we ensure you understand what we’re doing and why it
-                    matters.
-                    <br>
-                    <br>
-                    At SEO ESP, we are a results-first bespoke consultancy focused on cutting through the noise. We don’t
-                    sell fluff. We don’t push bloated packages. We offer practical and effective strategies tailored to your
-                    business, and we ensure you understand what we’re doing and why it matters.
+                    @if ($homeBanner->content)
+                        {!! $homeBanner->content !!}
+                    @else
+                        <span class="og-highlighted">SEO (Search Engine Optimization)</span> is often treated like a
+                        buzzword—misunderstood, misused, and sometimes overpromised. But at its core, SEO is both art and
+                        science: the process of attracting unpaid (organic) visits to your website through strategic content
+                        and
+                        technical optimization.
+                        Unlike SEM (Search Engine Marketing), which relies on paid ads, SEO is an investment that builds
+                        long-term value. It compounds over time, earning visibility, trust, and traffic that doesn’t
+                        disappear
+                        the second your ad budget runs out. At SEO ESP, we are a results-first bespoke consultancy focused
+                        on
+                        cutting through the noise. We don’t sell fluff. We don’t push bloated packages. We offer practical
+                        and
+                        effective strategies tailored to your business, and we ensure you understand what we’re doing and
+                        why it
+                        matters.
+                        <br><br>
+                        At SEO ESP, we are a results-first bespoke consultancy focused on cutting through the noise. We
+                        don’t
+                        sell fluff. We don’t push bloated packages. We offer practical and effective strategies tailored to
+                        your
+                        business, and we ensure you understand what we’re doing and why it matters.
+                    @endif
                 </p>
             </div>
             <div class="og-banner-right-content">
-                <img src="{{ asset('frontend/assets/images/banner.png') }}" class="og-banner-right-content-image" />
+                <img src="{{ asset($homeBanner->image ?? 'frontend/assets/images/banner.png') }}"
+                    class="og-banner-right-content-image" alt="{{ $homeBanner->alt_image ?? 'Banner Image' }}" />
             </div>
         </section>
         <!-- ================================Banner Section End Here ========================================-->
@@ -175,85 +187,102 @@
             <div class="og-who-we-are-left">
                 <div>
                     <img src="frontend/assets/images/who-we-are.png" alt="" class="og-who-we-are-image">
-                    <p class="og-who-we-are-img-title image-subtitle">Cassie Vignieri, President and Founder.</p>
+                    <p class="og-who-we-are-img-title image-subtitle">
+                        {{ $whoWeAre->designation ?? 'Cassie Vignieri, President and Founder.' }}
+                    </p>
                 </div>
-                <p class="og-who-we-are-img-title">We believe in partnership over quick wins. You won’t just get SEO
-                    tactics—you’ll get a long-term ally who’s
-                    invested in your growth.</p>
+                <p class="og-who-we-are-img-title">{!! $whoWeAre->sub_content ??
+                    'We believe in partnership
+                                                                                                                                                                                                                                                                                                                                                                                    over quick wins. You won’t just get SEO
+                                                                                                                                                                                                                                                                                                                                                                                    tactics—you’ll get a long-term ally who’s
+                                                                                                                                                                                                                                                                                                                                                                                    invested in your growth.' !!} </p>
             </div>
             <div class="og-who-we-are-right">
                 <h2 class="og-who-we-are-title">
                     Who <span class="text-white">We Are</span>
                 </h2>
                 <p class="og-who-we-are-description">
-                    At <span class="og-highlighted">SEO ESP</span>, we don’t just optimize pages—we build momentum. Our
-                    expert SEO
-                    and digital marketing
-                    services are
-                    designed to drive targeted traffic, increase conversions, and create a roadmap for sustained success.
-                    Whether
-                    you’re a scaling startup or an established brand rethinking your strategy, we help you turn challenges
-                    into
-                    opportunities for growth.
+                    {!! $whoWeAre->content ??
+                        ' At <span class="og-highlighted">SEO ESP</span>, we don’t just optimize pages—we build momentum. Our
+                                                                                                                                                                                                                                                                                                                                                                                                                expert SEO
+                                                                                                                                                                                                                                                                                                                                                                                                                and digital marketing
+                                                                                                                                                                                                                                                                                                                                                                                                                services are
+                                                                                                                                                                                                                                                                                                                                                                                                                designed to drive targeted traffic, increase conversions, and create a roadmap for sustained success.
+                                                                                                                                                                                                                                                                                                                                                                                                                Whether
+                                                                                                                                                                                                                                                                                                                                                                                                                you’re a scaling startup or an established brand rethinking your strategy, we help you turn challenges
+                                                                                                                                                                                                                                                                                                                                                                                                                into
+                                                                                                                                                                                                                                                                                                                                                                                                                opportunities for growth.' !!}
+
                 </p>
                 <div class="og-who-we-are-list">
                     <h3 class="og-who-we-are-list-title">Your Trusted Partner for Innovative Strategies and Real Results
                     </h3>
-                    <div class="flex items-start gap-10">
-                        <img src="frontend/assets/images/svg/check.svg" alt="">
-                        <p class="og-who-we-are-list-description">
-                            <span class="og-highlighted">Tailored, Not Templated:</span> Every recommendation is grounded
-                            in data,
-                            industry research, and your unique
-                            business goals—not just a one-size-fits-all checklist.
-                        </p>
-                    </div>
-                    <div class="flex items-start gap-10">
-                        <img src="frontend/assets/images/svg/check.svg" alt="">
-                        <p class="og-who-we-are-list-description">
-                            <span class="og-highlighted">Clarity Meets Expertise:</span> We break down the complex, filter
-                            out the
-                            noise, and focus on what drives measurable results.
-                        </p>
-                    </div>
-                    <div class="flex items-start gap-10">
-                        <img src="frontend/assets/images/svg/check.svg" alt="">
-                        <p class="og-who-we-are-list-description">
-                            <span class="og-highlighted">Future-Proof Strategies:</span> Search is constantly changing. We
-                            stay ahead
-                            of the curve so your business remains competitive—today, tomorrow, and beyond.
-                        </p>
-                    </div>
+                    @if ($whoWeAreItems->isEmpty())
+                        <div class="flex items-start gap-10">
+                            <img src="frontend/assets/images/svg/check.svg" alt="">
+                            <p class="og-who-we-are-list-description">
+                                <span class="og-highlighted">Tailored, Not Templated:</span> Every recommendation is
+                                grounded
+                                in data, industry research, and your unique business goals—not just a one-size-fits-all
+                                checklist.
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-10">
+                            <img src="frontend/assets/images/svg/check.svg" alt="">
+                            <p class="og-who-we-are-list-description">
+                                <span class="og-highlighted">Clarity Meets Expertise:</span> We break down the complex,
+                                filter out
+                                the noise, and focus on what drives measurable results.
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-10">
+                            <img src="frontend/assets/images/svg/check.svg" alt="">
+                            <p class="og-who-we-are-list-description">
+                                <span class="og-highlighted">Future-Proof Strategies:</span> Search is constantly changing.
+                                We stay ahead
+                                of the curve so your business remains competitive—today, tomorrow, and beyond.
+                            </p>
+                        </div>
+                    @else
+                        @foreach ($whoWeAreItems as $item)
+                            <div class="flex items-start gap-10">
+                                <img src="frontend/assets/images/svg/check.svg" alt="">
+                                <p class="og-who-we-are-list-description">
+                                    <span class="og-highlighted">{{ $item->title }}</span>
+                                    {{ $item->content }}
+                                </p>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
-                <a href="{{ route('about') }}" class="og-btn-2">
-                    Learn more
+                <a href="{{ route('about') }}" class="og-btn-2">{{ $homeBanner->button_text ?? 'Learn More' }}
                     <img src="frontend/assets/images/svg/button_icon.svg" alt="">
                 </a>
             </div>
         </section>
         <!-- ================================Who We Are Section End Here ========================================-->
 
-
-
         <!-- ================================Why Trust Us With Your SEO? Section Start Here ========================================-->
         <section class="og-trust-section">
             <div class="container flex items-center flex-col og-trust-content">
                 <h2 class="og-trust-title">Why Trust Us With Your SEO?</h2>
                 <p class="text-center og-trust-description">
-                    Many SEO consultants would have you believe this work lives in a black box, reserved for those with
-                    mysterious
-                    insider knowledge. Most people don’t know much about search or algorithms beyond typing keywords into
-                    Google
-                    and reading the results. So when traffic drops, they’re often left in the dark, relying on someone who
-                    does
-                    understand.
-                    <br>
-                    <br>
-                    We’ve all heard the story of the mechanic who tells you ten things are wrong with your car when all you
-                    came
-                    in for was an oil change. Because of the knowledge gap, it’s easy to get overcharged for services you
-                    may not
-                    need. SEO can be the same.
+                    {!! $homeWhyTrust->content ??
+                        'Many SEO consultants would have you believe this work lives in a black box, reserved for those with
+                                                                                mysterious
+                                                                                insider knowledge. Most people don’t know much about search or algorithms beyond typing keywords into
+                                                                                Google
+                                                                                and reading the results. So when traffic drops, they’re often left in the dark, relying on someone who
+                                                                                does
+                                                                                understand.
+                                                                                <br>
+                                                                                <br>
+                                                                                We’ve all heard the story of the mechanic who tells you ten things are wrong with your car when all you
+                                                                                came
+                                                                                in for was an oil change. Because of the knowledge gap, it’s easy to get overcharged for services you
+                                                                                may not
+                                                                                need. SEO can be the same.' !!}
+
                 </p>
             </div>
         </section>

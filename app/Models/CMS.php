@@ -137,4 +137,46 @@ class CMS extends Model
         return $query->where('page', 'HomePageWhyTrustWithUs')
             ->where('section', 'HomeSectionWhyTrustWithUs');
     }
+    //about banner
+    public function scopeAboutBanner(Builder $query): Builder
+    {
+        return $query->where('page', 'AboutPageBanner')
+            ->where('section', 'AboutSectionBanner');
+    }
+    //SEO ESP
+    public function scopeAboutSeoEsp(Builder $query): Builder
+    {
+        return $query->where('page', 'AboutPageSeoEsp')
+            ->where('section', 'AboutSectionSeoEsp');
+    }
+    //real Experience
+    public function scopeAboutRealExperience(Builder $query): Builder
+    {
+        return $query->where('page', 'AboutPageRealExperience')
+            ->where('section', 'AboutSectionRealExperience');
+    }
+    //seo scales
+    public function scopeAboutScalesAcross(Builder $query): Builder
+    {
+        return $query->where('page', 'AboutPageSalesAcross')
+            ->where('section', 'AboutSectionSalesAcross');
+    }
+    //my work
+    public function scopeAboutMyWork(Builder $query): Builder
+    {
+        return $query->where('page', 'AboutPageMyWork')
+            ->where('section', 'AboutSectionMyWork');
+    }
+    //my work items
+    public function scopeAboutMyWorkItems(Builder $query): Builder
+    {
+        return $query->where('page', 'AboutPageMyWorkItem')
+            ->where('section', 'AboutSectionMyWorkItem');
+    }
+    //about scopeAboutEspApart
+    public function scopeAboutEspApart(Builder $query): Builder
+    {
+        return $query->where('page', 'AboutPageEspApart')
+            ->where('section', 'AboutSectionEspApart');
+    }
 }

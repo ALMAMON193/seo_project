@@ -415,6 +415,15 @@ main {
     line-height: 28px;
 }
 
+.og-banner-description h1,
+.og-banner-description h2,
+.og-banner-description p,
+.og-banner-description li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+
 .og-banner-left-content {
     width: 50%;
     margin-top: 32px;
@@ -422,6 +431,12 @@ main {
 
 .og-banner-right-content {
     width: 50%;
+}
+.og-banner-right-content-image{
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 /* ============================

@@ -10,18 +10,20 @@ use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\HomeBannerResource\Pages;
+use Rawilk\FilamentQuill\Filament\Forms\Components\QuillEditor;
 
 class HomeBannerResource extends Resource
 {
     protected static ?string $model = CMS::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
 
     protected static ?string $navigationGroup = 'Home Page';
     protected static ?string $navigationLabel = 'Banner Content';
@@ -37,14 +39,12 @@ class HomeBannerResource extends Resource
                     ->schema([
                         Section::make('Content Details')
                             ->schema([
-                                RichEditor::make('title')
+                                TextInput::make('title')
                                     ->label('Title')
-
-                                    ->toolbarButtons(['h1'])
                                     ->columnSpanFull(),
-                                RichEditor::make('content')
+                                QuillEditor::make('content')
                                     ->label('Content')
-
+                                    ->extraAttributes(['style' => 'font-family: Roboto, sans-serif; font-size: 18px;'])
                                     ->columnSpanFull(),
                                 FileUpload::make('image')
                                     ->label('Image')

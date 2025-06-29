@@ -22,7 +22,7 @@ class ServiceBannerSectionResource extends Resource
 {
     protected static ?string $model = CMS::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
 
     protected static ?string $navigationGroup = 'Service Banner Section';
     protected static ?string $navigationLabel = 'Service Banner';

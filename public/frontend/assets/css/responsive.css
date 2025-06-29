@@ -9,9 +9,6 @@
     .og-banner-right-content {
       max-width: fit-content;
     }
-    .og-banner-right-content-image {
-      width: 100%;
-    }
 
     .og-service-content-grid {
       display: grid;
@@ -74,10 +71,6 @@
 
     .og-seo-esp-bottom-card {
       width: 49%;
-    }
-
-    .og-banner-right-content-image {
-      width: 100% !important;
     }
 
     /* Service Page */
@@ -238,11 +231,6 @@
     .og-banner-description {
       font-size: 16px;
       line-height: 24px;
-    }
-
-    .og-banner-right-content-image {
-      width: 100%;
-      margin-top: 35px;
     }
 
     .og-service-title {
@@ -3484,7 +3472,7 @@
     .og-get-in-touch-form {
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr;   
+      grid-template-columns: 1fr;
       gap: 42px;
     }
 
