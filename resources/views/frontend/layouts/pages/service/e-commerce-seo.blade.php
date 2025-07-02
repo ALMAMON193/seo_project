@@ -2,34 +2,37 @@
 <section class="og-keyword-section" id="og-ecommerce">
     <div class="container og-keyword-section-container">
         <div class="og-keyword-section-left">
-            <h2 class="ecommerce-seosection-title">E-Commerce SEO</h2>
+            <h2 class="ecommerce-seosection-title">{{ $eCommerceSeo->title ?? 'E-Commerce SEO' }}</h2>
             <p class="ecommerce-seo-description">
-                Selling online requires more than great products—it demands smart,
-                search-first visibility.
+                {!! $ecommerceSeo->content ??
+                    ' Selling online requires more than great products—it demands smart,
+                                                                search-first visibility.
+                
+                                                                <br><br>
+                                                                At SEO ESP, we specialize in optimizing e-commerce sites for both
+                                                                organic search and shopping-specific platforms, such as Google
+                                                                Shopping and Amazon. We help your products stand out in a crowded
+                                                                digital marketplace through structured data, optimized product
+                                                                feeds, and search-friendly content that drives clicks and
+                                                                conversions.
+                
+                                                                <br>
+                                                                <br>
+                                                                With hands-on experience managing SEO for large-scale eCommerce
+                                                                catalogs, including deep integration with product feeds and
+                                                                merchant platforms, we know what it takes to make your listings
+                                                                more discoverable and more profitable.' !!}
             </p>
-            <p class="ecommerce-seo-description">
-                At SEO ESP, we specialize in optimizing e-commerce sites for both
-                organic search and shopping-specific platforms, such as Google
-                Shopping and Amazon. We help your products stand out in a crowded
-                digital marketplace through structured data, optimized product
-                feeds, and search-friendly content that drives clicks and
-                conversions.
-            </p>
-            <p class="ecommerce-seo-description">
-                With hands-on experience managing SEO for large-scale eCommerce
-                catalogs, including deep integration with product feeds and
-                merchant platforms, we know what it takes to make your listings
-                more discoverable and more profitable.
-            </p>
-            <a href="{{ route('contact') }}" class="og-keyword-section-btn">Get started</a>
+            <a href="{{ route('contact') }}"
+                class="og-keyword-section-btn">{{ $eCommerceSeo->btn_text ?? 'Get started' }}</a>
         </div>
         <div class="og-keyword-section-right">
-            <img src="{{ asset('frontend/assets/images/closeup-view-hand-using-laptop-analyze.png') }}" alt=""
-                class="og-keyword-section-right-image" />
+            <img src="{{ asset($eCommerceSeo->image ?? 'frontend/assets/images/closeup-view-hand-using-laptop-analyze.png') }}"
+                alt="{{ $eCommerceSeo->image_alt ?? 'E-Commerce SEO' }}" class="og-keyword-section-right-image" />
         </div>
     </div>
 </section>
-<!-- ===========================Keyword Research Section End Here==============================================-->
+<!-- ===========================Keyword Research Section End Here ==============================================-->
 
 <!-- =========================== Our approach Section Start Here ==============================================-->
 <section class="og-beyond-basic-keyword-section">

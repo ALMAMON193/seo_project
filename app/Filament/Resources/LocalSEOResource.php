@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
@@ -37,9 +38,12 @@ class LocalSEOResource extends Resource
                                     ->maxLength(255)
 
                                     ->columnSpanFull(),
-                                RichEditor::make('content')
+                                Textarea::make('content')
                                     ->label('Content')
 
+                                    ->columnSpanFull(),
+                                Textarea::make('sub_content')
+                                    ->label('Sub Content')
                                     ->columnSpanFull(),
                                 TextInput::make('btn_text')
                                     ->label('Button Text')
@@ -88,6 +92,10 @@ class LocalSEOResource extends Resource
                     ->formatStateUsing(fn(string $state): string => strip_tags($state)),
                 Tables\Columns\TextColumn::make('content')
                     ->label('Content')
+                    ->sortable()
+                    ->searchable()->limit(30)->formatStateUsing(fn(string $state): string => strip_tags($state)),
+                Tables\Columns\TextColumn::make('sub_content')
+                    ->label('Sub Content')
                     ->sortable()
                     ->searchable()->limit(30)->formatStateUsing(fn(string $state): string => strip_tags($state)),
                 ImageColumn::make('image'),

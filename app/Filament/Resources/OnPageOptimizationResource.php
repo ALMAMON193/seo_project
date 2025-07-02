@@ -10,6 +10,7 @@ use Filament\Resources\Resource;
 use App\Models\OnPageOptimization;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
@@ -39,7 +40,7 @@ class OnPageOptimizationResource extends Resource
                                     ->default('On-Page Optimization')
                                     ->maxLength(255)
                                     ->columnSpanFull(),
-                                RichEditor::make('content')
+                                Textarea::make('content')
                                     ->label('Content')
                                     ->columnSpanFull(),
                                 TextInput::make('btn_text')

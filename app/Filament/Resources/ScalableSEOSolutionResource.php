@@ -11,6 +11,7 @@ use Filament\Resources\Resource;
 use App\Models\ScalableSEOSolution;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
@@ -41,7 +42,7 @@ class ScalableSEOSolutionResource extends Resource
                                     ->maxLength(255)
 
                                     ->columnSpanFull(),
-                                RichEditor::make('content')
+                                Textarea::make('content')
                                     ->label('Content')
 
                                     ->columnSpanFull(),

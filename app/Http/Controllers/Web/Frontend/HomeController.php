@@ -23,6 +23,7 @@ class HomeController extends Controller
         $homeWhyTrust = CMS::where('page', 'HomePageWhyTrustWithUs')
             ->where('section', 'HomeSectionWhyTrustWithUs')->first();
 
+
         return view('frontend.layouts.index', compact('homeBanner', 'whoWeAre', 'whoWeAreItems', 'homeWhyTrust'));
     }
 

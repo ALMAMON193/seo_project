@@ -12,7 +12,50 @@ class PageController extends Controller
     public function servicePage()
     {
         $serviceBanner  = CMS::where('page', Page::SERVICE->value)->where('section', Section::SERVICE_BANNER->value)->first();
-        return view('frontend.layouts.pages.service', compact('serviceBanner'));
+        //local seo
+        $localSeo = CMS::where('page', 'ServicePageLocalSeo')
+            ->where('section', 'ServiceSectionLocalSeo')
+            ->first();
+        $localSeoItem = CMS::where('page', 'ServicePageLocalSeoItem')
+            ->where('section', 'ServiceSectionLocalSeoItem')
+            ->get();
+        $contentSeo = CMS::where('page', 'ServicePageContentSeo')
+            ->where('section', 'ServiceSectionContentSeo')
+            ->first();
+        $keywordSeo = CMS::where('page', 'ServicePageKeywordResearch')
+            ->where('section', 'ServiceSectionKeywordResearch')
+            ->first();
+        $keywordSeoItem = CMS::where('page', 'ServicePageKeywordResearchItem')
+            ->where('section', 'ServiceSectionKeywordResearchItem')
+            ->get();
+        //technical seo
+        $technicalSeo = CMS::where('page', 'ServicePageTechnicalSeo')
+            ->where('section', 'ServiceSectionTechnicalSeo')
+            ->first();
+        $enterpriseSeo = CMS::where('page', 'ServicePageEnterpriseSeo')
+            ->where('section', 'ServiceSectionEnterpriseSeo')
+            ->first();
+        //scalable enterprise seo
+        $scalableEnterpriseSeo = CMS::where('page', 'ServicePageScalableSeo')
+            ->where('section', 'ServiceSectionScalableSeo')
+            ->first();
+        // scalableEnterpriseSeo item
+        $scalableEnterpriseSeoItem = CMS::where('page', 'ServicePageScalableSeoItem')
+            ->where('section', 'ServiceSectionScalableSeoItem')
+            ->get();
+        //one page optimize
+        $onePageOptimize = CMS::where('page', 'ServicePageOnePageOptimizationSeo')
+            ->where('section', 'ServiceSectionOnePageOptimizationSeo')
+            ->first();
+        $dataAnalysis = CMS::where('page', 'ServicePageDataAnalysisSeo')
+            ->where('section', 'ServiceSectionDataAnalysisSeo')
+            ->first();
+        //ecommerce seo
+        $ecommerceSeo = CMS::where('page', 'ServicePageECommerceSeo')
+            ->where('section', 'ServiceSectionECommerceSeo')
+            ->first();
+        //local seo
+        return view('frontend.layouts.pages.service', compact('serviceBanner', 'localSeo', 'localSeoItem', 'contentSeo', 'keywordSeo', 'keywordSeoItem', 'technicalSeo', 'enterpriseSeo', 'scalableEnterpriseSeo', 'scalableEnterpriseSeoItem', 'onePageOptimize', 'dataAnalysis', 'ecommerceSeo'));
     }
     public function aboutPage()
     {
@@ -49,6 +92,7 @@ class PageController extends Controller
     }
     public function localSeoPage()
     {
+
         return view('frontend.layouts.pages.service.local-seo');
     }
     public function contentSeoPage()
