@@ -24,6 +24,7 @@ class LocalSEOItemResource extends Resource
 
     protected static ?string $navigationGroup = 'Local SEO';
     protected static ?string $navigationLabel = 'Local SEO Items';
+    protected static ?int $navigationSort = 0;
 
 
     public static function form(Form $form): Form

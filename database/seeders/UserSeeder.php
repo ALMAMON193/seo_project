@@ -17,8 +17,7 @@ class UserSeeder extends Seeder
     {
         // Create one admin user with fake data
         User::create([
-            'fname' => "Admin",
-            'lname' => "admin",
+            'name' => "Admin",
             'email' => 'admin@admin.com',
             'role' => 'admin',
             'password' => Hash::make('12345678'),

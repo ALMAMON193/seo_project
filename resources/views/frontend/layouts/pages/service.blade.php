@@ -10,8 +10,9 @@
                     {{ $serviceBanner->title ?? 'Search Engine Optimization Services' }}
                 </h1>
                 <p class="og-service-description-1">
-                    {{ $serviceBanner->content ?? ' At SEO ESP, we offer expert consulting across the full SEO spectrum—tailored to your business goals,
-                    your audience, and your industry. Here’s how we help you grow smarter.' }}
+                    {{ $serviceBanner->content ??
+                        ' At SEO ESP, we offer expert consulting across the full SEO spectrum—tailored to your business goals,
+                                                                                                                                                                                    your audience, and your industry. Here’s how we help you grow smarter.' }}
 
                 </p>
                 <div class="breadcrumbs-container">
@@ -28,7 +29,7 @@
         <!-- ===========================Banner Section end Here==============================================-->
         @include('frontend.layouts.pages.service.content-seo')
         <!-- ===========================Local SEO start Here==============================================-->
-       @include('frontend.layouts.pages.service.local-seo')
+        @include('frontend.layouts.pages.service.local-seo')
         <!-- ===========================Local SEO end Here==============================================-->
         <!-- ==========================Keyword Research & Tracking start here====================================== -->
         @include('frontend.layouts.pages.service.keyword-research')

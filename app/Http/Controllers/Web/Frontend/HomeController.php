@@ -26,8 +26,6 @@ class HomeController extends Controller
 
         return view('frontend.layouts.index', compact('homeBanner', 'whoWeAre', 'whoWeAreItems', 'homeWhyTrust'));
     }
-
-
     public function subscribe(Request $request)
     {
         $request->validate([

@@ -85,221 +85,227 @@
         </section>
         <!-- ===========================About Information section end Here==============================================-->
         <!-- ===========================Lets Work Together section end Here==============================================-->
-        <section id="og-lets-work-section" class="container og-lets-work-section">
-            <button class="og-about-page-seo-esp-tag-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
-                    <path
-                        d="M2.28117 0C1.21848 1.12238 0.556049 2.4367 0.405071 3.9851C0.254094 5.53115 0.646167 6.94729 1.49468 8.26863C0.710537 7.52896 -0.102867 6.00632 0.0106587 4.20278C0.120673 2.45543 0.869707 1.04748 2.28117 0Z"
-                        fill="#726352" />
-                    <path
-                        d="M6.86388 15.9999C7.26298 15.9999 7.6609 15.9999 8.06 15.9999C8.90383 15.9999 9.74649 15.9999 10.5903 15.9999C10.7039 15.9999 10.7752 15.9449 10.7764 15.8431C10.7764 15.794 10.7612 15.7401 10.7378 15.6956C10.4078 15.0601 9.99578 14.4855 9.4621 14.0033C8.91202 13.5059 8.28588 13.1513 7.55206 13.005C7.48418 12.9909 7.48184 12.9535 7.48066 12.9008C7.41981 10.6268 7.35895 8.3516 7.29575 6.07758C7.29341 5.99916 7.31564 5.96405 7.38587 5.92894C7.92189 5.66678 8.17352 5.0617 7.98743 4.49641C7.80369 3.93815 7.23021 3.59874 6.64736 3.70407C6.14411 3.79536 5.75672 4.20733 5.68649 4.72463C5.61978 5.21736 5.88897 5.71242 6.35009 5.93245C6.4168 5.96405 6.43319 6.00033 6.43085 6.06938C6.38988 7.55575 6.35126 9.04212 6.31147 10.5285C6.2904 11.3103 6.26699 12.0933 6.24827 12.8751C6.24593 12.9558 6.22837 12.9933 6.13943 13.0108C5.80002 13.0775 5.47817 13.1969 5.17387 13.3608C4.17204 13.9003 3.48621 14.7348 2.97242 15.7272C2.89517 15.8771 2.97827 15.9988 3.1468 15.9988C4.38622 15.9988 5.62447 15.9988 6.86388 15.9988V15.9999ZM12.2218 8.27787C13.4121 6.98461 13.8826 5.46079 13.6637 3.72397C13.4378 1.93097 12.3529 0.587388 11.4435 0.00805664C12.5249 1.14565 13.1757 2.46349 13.3173 4.01071C13.4601 5.56028 13.0539 6.97525 12.2218 8.2767V8.27787ZM4.44123 1.87713C3.78348 2.2376 3.07892 3.16571 3.06721 4.40629C3.05785 5.36014 3.53068 6.23558 4.00702 6.59137C3.12573 4.92945 3.26969 3.36233 4.44123 1.87596V1.87713ZM9.71958 6.59137C10.3551 6.06236 10.8303 4.9985 10.5974 3.80004C10.423 2.9012 9.82725 2.15802 9.2725 1.87596C9.83544 2.55009 10.1866 3.3003 10.2685 4.16286C10.3492 5.0301 10.1374 5.83297 9.71958 6.59137Z"
-                        fill="#726352" />
-                </svg>
-                Contact Us
-            </button>
-            <div class="og-lets-work-content">
-                <div class="og-lets-work-form-content">
-                    <h2 class="og-lets-work-form-title">Let's Work Together</h2>
-                    <p class="og-lets-work-form-description">
-                        If you're ready to demystify SEO and focus on what drives real growth, I'd love to hear more about
-                        your business.
-                    </p>
+       <section id="og-lets-work-section" class="container og-lets-work-section">
+    <button class="og-about-page-seo-esp-tag-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
+            <path d="M2.28117 0C1.21848 1.12238 0.556049 2.4367 0.405071 3.9851C0.254094 5.53115 0.646167 6.94729 1.49468 8.26863C0.710537 7.52896 -0.102867 6.00632 0.0106587 4.20278C0.120673 2.45543 0.869707 1.04748 2.28117 0Z" fill="#726352" />
+            <path d="M6.86388 15.9999C7.26298 15.9999 7.6609 15.9999 8.06 15.9999C8.90383 15.9999 9.74649 15.9999 10.5903 15.9999C10.7039 15.9999 10.7752 15.9449 10.7764 15.8431C10.7764 15.794 10.7612 15.7401 10.7378 15.6956C10.4078 15.0601 9.99578 14.4855 9.4621 14.0033C8.91202 13.5059 8.28588 13.1513 7.55206 13.005C7.48418 12.9909 7.48184 12.9535 7.48066 12.9008C7.41981 10.6268 7.35895 8.3516 7.29575 6.07758C7.29341 5.99916 7.31564 5.96405 7.38587 5.92894C7.92189 5.66678 8.17352 5.0617 7.98743 4.49641C7.80369 3.93815 7.23021 3.59874 6.64736 3.70407C6.14411 3.79536 5.75672 4.20733 5.68649 4.72463C5.61978 5.21736 5.88897 5.71242 6.35009 5.93245C6.4168 5.96405 6.43319 6.00033 6.43085 6.06938C6.38988 7.55575 6.35126 9.04212 6.31147 10.5285C6.2904 11.3103 6.26699 12.0933 6.24827 12.8751C6.24593 12.9558 6.22837 12.9933 6.13943 13.0108C5.80002 13.0775 5.47817 13.1969 5.17387 13.3608C4.17204 13.9003 3.48621 14.7348 2.97242 15.7272C2.89517 15.8771 2.97827 15.9988 3.1468 15.9988C4.38622 15.9988 5.62447 15.9988 6.86388 15.9988V15.9999ZM12.2218 8.27787C13.4121 6.98461 13.8826 5.46079 13.6637 3.72397C13.4378 1.93097 12.3529 0.587388 11.4435 0.00805664C12.5249 1.14565 13.1757 2.46349 13.3173 4.01071C13.4601 5.56028 13.0539 6.97525 12.2218 8.2767V8.27787ZM4.44123 1.87713C3.78348 2.2376 3.07892 3.16571 3.06721 4.40629C3.05785 5.36014 3.53068 6.23558 4.00702 6.59137C3.12573 4.92945 3.26969 3.36233 4.44123 1.87596V1.87713ZM9.71958 6.59137C10.3551 6.06236 10.8303 4.9985 10.5974 3.80004C10.423 2.9012 9.82725 2.15802 9.2725 1.87596C9.83544 2.55009 10.1866 3.3003 10.2685 4.16286C10.3492 5.0301 10.1374 5.83297 9.71958 6.59137Z" fill="#726352" />
+        </svg>
+        Contact Us
+    </button>
+    <div class="og-lets-work-content">
+        <div class="og-lets-work-form-content">
+            <h2 class="og-lets-work-form-title">Let's Work Together</h2>
+            <p class="og-lets-work-form-description">
+                If you're ready to demystify SEO and focus on what drives real growth, I'd love to hear more about your business.
+            </p>
 
-                    <form id="contactForm" action="{{ route('contact_page.contact.store') }}" method="POST">
-                        @csrf
-                        <div class="og-lets-work-form-input">
-                            <input class="og-lets-work-form-input-field" type="text" name="fname"
-                                placeholder="First Name" required>
-                            <input class="og-lets-work-form-input-field" type="text" name="lname"
-                                placeholder="Last Name" required>
-                        </div>
-                        <div class="og-lets-work-form-input">
-                            <input class="og-lets-work-form-input-field" type="email" name="email"
-                                placeholder="Email Address" required>
-                            <input class="og-lets-work-form-input-field" type="text" name="phone"
-                                placeholder="Phone Number">
-                        </div>
-                        <div class="og-lets-work-form-input">
-                            <input class="og-lets-work-form-input-field" type="text" name="company_name"
-                                placeholder="Company Name" required>
-                        </div>
-                        <select class="og-lets-work-form-input-field" style="margin-bottom: 24px;" name="subject" required>
-                            <option value="" selected disabled>Service Type</option>
-                            <option value="content_seo">Content SEO</option>
-                            <option value="local_seo">Local SEO</option>
-                            <option value="keyword_research_and_tracking">Keyword Research and Tracking</option>
-                            <option value="technical_seo">Technical SEO</option>
-                            <option value="enterprise_seo">Enterprise SEO</option>
-                            <option value="on_page_optimization">On-Page Optimization</option>
-                            <option value="data_analysis">Data Analysis</option>
-                            <option value="ecommerce">eCommerce</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <textarea class="og-lets-work-form-input-field h-200" name="message" placeholder="How can I help you?" required></textarea>
-
-                        <!-- Notification Messages -->
-                        <div id="formSuccess" class="og-form-message og-form-success" style="display: none;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                            <span>Thank you for your message! We will contact you soon.</span>
-                        </div>
-
-                        <div id="formError" class="og-form-message og-form-error" style="display: none;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                            </svg>
-                            <span>There was an error submitting your form. Please try again.</span>
-                        </div>
-
-                        <button class="og-btn mt-5" type="submit" id="submitButton">
-                            Submit
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none">
-                                <path d="M14.4297 7L20.4997 13.07L14.4297 19.14" stroke="#FFFBF4" stroke-width="1.5"
-                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M3.5 13.0703H20.33" stroke="#FFFBF4" stroke-width="1.5" stroke-miterlimit="10"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </form>
+            @if (session('success'))
+                <div class="og-form-message og-form-success" style="display: flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>{{ session('success') }}</span>
                 </div>
-                <div class="og-lets-work-img-content">
-                    <img class="og-lets-work-img" src="{{ asset('frontend/assets/images/lets_work_together.png') }}"
-                        alt="" class="og-banner-right-content-image">
+            @endif
+
+            <form id="contactForm" action="{{ route('contact_page.contact.store') }}" method="POST">
+                @csrf
+                <div class="og-lets-work-form-input">
+                    <input class="og-lets-work-form-input-field" type="text" name="fname" placeholder="First Name" required>
+                    <input class="og-lets-work-form-input-field" type="text" name="lname" placeholder="Last Name" required>
                 </div>
-            </div>
+                <div class="og-lets-work-form-input">
+                    <input class="og-lets-work-form-input-field" type="email" name="email" placeholder="Email Address" required>
+                    <input class="og-lets-work-form-input-field" type="text" name="phone" placeholder="Phone Number">
+                </div>
+                <div class="og-lets-work-form-input">
+                    <input class="og-lets-work-form-input-field" type="text" name="company_name" placeholder="Company Name" required>
+                </div>
+                <select class="og-lets-work-form-input-field" style="margin-bottom: 24px;" name="subject" required>
+                    <option value="" selected disabled>Service Type</option>
+                    <option value="content_seo">Content SEO</option>
+                    <option value="local_seo">Local SEO</option>
+                    <option value="keyword_research_and_tracking">Keyword Research and Tracking</option>
+                    <option value="technical_seo">Technical SEO</option>
+                    <option value="enterprise_seo">Enterprise SEO</option>
+                    <option value="on_page_optimization">On-Page Optimization</option>
+                    <option value="data_analysis">Data Analysis</option>
+                    <option value="ecommerce">eCommerce</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea class="og-lets-work-form-input-field h-200" name="message" placeholder="How can I help you?" required></textarea>
 
-            <style>
-                /* Notification Messages Styling */
-                .og-form-message {
-                    padding: 15px;
-                    margin: 15px 0;
-                    border-radius: 4px;
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    font-size: 14px;
+                <!-- Notification Messages -->
+                <div id="formSuccess" class="og-form-message og-form-success" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>Thank you for your message! We will contact you soon.</span>
+                </div>
+
+                <div id="formError" class="og-form-message og-form-error" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span id="errorMessage">There was an error submitting your form. Please try again.</span>
+                </div>
+
+                <button class="og-btn mt-5" type="submit" id="submitButton">
+                    Submit
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M14.4297 7L20.4997 13.07L14.4297 19.14" stroke="#FFFBF4" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3.5 13.0703H20.33" stroke="#FFFBF4" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+        <div class="og-lets-work-img-content">
+            <img class="og-lets-work-img" src="{{ asset('frontend/assets/images/lets_work_together.png') }}" alt="Let's Work Together">
+        </div>
+    </div>
+
+    <style>
+        /* Notification Messages Styling */
+        .og-form-message {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .og-form-success {
+            background-color: #f0fff4;
+            color: #2d7d46;
+            border: 1px solid #9ae6b4;
+        }
+
+        .og-form-error {
+            background-color: #fff5f5;
+            color: #c53030;
+            border: 1px solid #fc8181;
+        }
+
+        .og-form-message svg {
+            flex-shrink: 0;
+        }
+
+        /* Button loading state */
+        .og-btn.loading {
+            position: relative;
+            pointer-events: none;
+            padding-right: 40px;
+        }
+
+        .og-btn.loading svg {
+            opacity: 0;
+        }
+
+        .og-btn.loading:after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 0;
+            right: 20px;
+            bottom: 0;
+            margin: auto;
+            border: 3px solid transparent;
+            border-top-color: #FFFBF4;
+            border-radius: 50%;
+            animation: button-loading-spinner 1s ease infinite;
+        }
+
+        @keyframes button-loading-spinner {
+            from {
+                transform: rotate(0turn);
+            }
+
+            to {
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const submitButton = document.getElementById('submitButton');
+            const successMessage = document.getElementById('formSuccess');
+            const errorMessage = document.getElementById('formError');
+            const errorMessageSpan = document.getElementById('errorMessage');
+
+            // Scroll to form when "Contact Us" button is clicked
+            document.querySelector('.og-about-page-seo-esp-tag-btn').addEventListener('click', function() {
+                form.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Reset messages
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+                errorMessageSpan.textContent = 'There was an error submitting your form. Please try again.';
+
+                // Validate phone field
+                const phone = form.querySelector('input[name="phone"]').value;
+                if (phone && !/^\d+$/.test(phone)) {
+                    errorMessageSpan.textContent = 'Phone number must be numeric.';
+                    errorMessage.style.display = 'flex';
+                    return;
                 }
 
-                .og-form-success {
-                    background-color: #f0fff4;
-                    color: #2d7d46;
-                    border: 1px solid #9ae6b4;
-                }
+                // Set button to loading state
+                submitButton.classList.add('loading');
+                submitButton.disabled = true;
 
-                .og-form-error {
-                    background-color: #fff5f5;
-                    color: #c53030;
-                    border: 1px solid #fc8181;
-                }
+                // Prepare form data
+                const formData = new FormData(form);
 
-                .og-form-message svg {
-                    flex-shrink: 0;
-                }
-
-                /* Button loading state */
-                .og-btn.loading {
-                    position: relative;
-                    pointer-events: none;
-                    padding-right: 40px;
-                }
-
-                .og-btn.loading svg {
-                    opacity: 0;
-                }
-
-                .og-btn.loading:after {
-                    content: "";
-                    position: absolute;
-                    width: 16px;
-                    height: 16px;
-                    top: 0;
-                    right: 20px;
-                    bottom: 0;
-                    margin: auto;
-                    border: 3px solid transparent;
-                    border-top-color: #FFFBF4;
-                    border-radius: 50%;
-                    animation: button-loading-spinner 1s ease infinite;
-                }
-
-                @keyframes button-loading-spinner {
-                    from {
-                        transform: rotate(0turn);
+                // Submit via fetch API
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     }
-
-                    to {
-                        transform: rotate(1turn);
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
                     }
-                }
-            </style>
-
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const form = document.getElementById('contactForm');
-                    const submitButton = document.getElementById('submitButton');
-                    const successMessage = document.getElementById('formSuccess');
-                    const errorMessage = document.getElementById('formError');
-
-                    form.addEventListener('submit', function(e) {
-                        e.preventDefault();
-
-                        // Reset messages
-                        successMessage.style.display = 'none';
-                        errorMessage.style.display = 'none';
-
-                        // Set button to loading state
-                        submitButton.classList.add('loading');
-                        submitButton.disabled = true;
-
-                        // Prepare form data
-                        const formData = new FormData(form);
-
-                        // Submit via fetch API
-                        fetch(form.action, {
-                                method: 'POST',
-                                body: formData,
-                                headers: {
-                                    'Accept': 'application/json',
-                                    'X-Requested-With': 'XMLHttpRequest'
-                                }
-                            })
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok');
-                                }
-                                return response.json();
-                            })
-                            .then(data => {
-                                if (data.success) {
-                                    // Show success message
-                                    successMessage.style.display = 'flex';
-                                    form.reset();
-                                } else {
-                                    // Show error message
-                                    errorMessage.style.display = 'flex';
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                                errorMessage.style.display = 'flex';
-                            })
-                            .finally(() => {
-                                // Reset button state
-                                submitButton.classList.remove('loading');
-                                submitButton.disabled = false;
-                            });
-                    });
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        successMessage.style.display = 'flex';
+                        form.reset();
+                    } else {
+                        errorMessageSpan.textContent = data.errors ? Object.values(data.errors).join(' ') : 'There was an error submitting your form.';
+                        console.error('Form submission error:', data.errors);
+                        errorMessage.style.display = 'flex';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    errorMessage.style.display = 'flex';
+                })
+                .finally(() => {
+                    submitButton.classList.remove('loading');
+                    submitButton.disabled = false;
                 });
-            </script>
-        </section>
+            });
+        });
+    </script>
+</section>
     </main>
 @endsection

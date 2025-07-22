@@ -16,7 +16,7 @@ use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;;
 
 use App\Filament\Resources\HomeAboutUSItemResource\Pages;
-
+use Filament\Forms\Components\RichEditor;
 
 class HomeAboutUSItemResource extends Resource
 {
@@ -26,6 +26,7 @@ class HomeAboutUSItemResource extends Resource
 
     protected static ?string $navigationGroup = 'Home Page';
     protected static ?string $navigationLabel = 'Who We Are Items';
+    protected static ?int $navigationSort = 1;
 
 
     public static function form(Form $form): Form
@@ -36,9 +37,9 @@ class HomeAboutUSItemResource extends Resource
                     ->schema([
                         Section::make('Content Details')
                             ->schema([
-                                TextInput::make('title')
-                                    ->columnSpanFull()
-                                    ->placeholder('For example: Keyword Research & Tracking'),
+                                RichEditor::make('title')
+                                    ->columnSpanFull(),
+
                             ])
                             ->columnSpan(8),
 
@@ -69,6 +70,7 @@ class HomeAboutUSItemResource extends Resource
                     ->label('Title')
                     ->sortable()
                     ->limit(30)
+                    ->formatStateUsing(fn(?string $state): string => strip_tags($state ?? ''))
                     ->searchable(),
             ])
             ->filters([

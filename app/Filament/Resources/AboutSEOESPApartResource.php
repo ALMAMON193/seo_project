@@ -25,6 +25,8 @@ class AboutSEOESPApartResource extends Resource
 
     protected static ?string $label = 'About SEO ESP Apart';
 
+    protected static ?int $navigationSort = 5;
+
     public static function form(Form $form): Form
     {
         return $form

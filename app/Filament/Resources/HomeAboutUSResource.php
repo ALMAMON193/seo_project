@@ -27,6 +27,7 @@ class HomeAboutUSResource extends Resource
 
     protected static ?string $navigationGroup = 'Home Page';
     protected static ?string $navigationLabel = 'Who We Are';
+    protected static ?int $navigationSort = 0;
 
     public static function form(Form $form): Form
     {

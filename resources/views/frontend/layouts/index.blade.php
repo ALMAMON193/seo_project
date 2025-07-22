@@ -1,11 +1,10 @@
 @php
-    $setting = \App\Models\SystemSetting::first();
+$setting = \App\Models\SystemSetting::first();
 @endphp
 @extends('frontend.app')
 @section('title', 'Home Page | Search Engine Optimization Services')
 @section('content')
     <main class="og-bg-primary-color">
-
         <!-- =============================== Banner Section Start Here ======================================-->
         <!-- frontend/layouts/index.blade.php -->
         <section class="container og-banner-content">
@@ -13,15 +12,14 @@
                 <h2 class="og-banner-title">
                     {{ $homeBanner->title ?? 'SEO ESP: Bringing Clarity to Search Strategy' }}
                 </h2>
-                <p class="og-banner-description">
-                    @if ($homeBanner->content)
+                <div class="og-banner-description">
+                    @if (!empty($homeBanner) && $homeBanner->content)
                         {!! $homeBanner->content !!}
                     @else
                         <span class="og-highlighted">SEO (Search Engine Optimization)</span> is often treated like a
                         buzzword—misunderstood, misused, and sometimes overpromised. But at its core, SEO is both art and
                         science: the process of attracting unpaid (organic) visits to your website through strategic content
-                        and
-                        technical optimization.
+                        and technical optimization.
                         Unlike SEM (Search Engine Marketing), which relies on paid ads, SEO is an investment that builds
                         long-term value. It compounds over time, earning visibility, trust, and traffic that doesn’t
                         disappear
@@ -39,15 +37,15 @@
                         your
                         business, and we ensure you understand what we’re doing and why it matters.
                     @endif
-                </p>
+                </div>
+
             </div>
             <div class="og-banner-right-content">
                 <img src="{{ asset($homeBanner->image ?? 'frontend/assets/images/banner.png') }}"
-                    class="og-banner-right-content-image" alt="{{ $homeBanner->alt_image ?? 'Banner Image' }}" />
+                    class="og-banner-right-content-image" alt="{{ $homeBanner->image_alt ?? 'Banner Image' }}" />
             </div>
         </section>
         <!-- ================================Banner Section End Here ========================================-->
-
         <!-- ================================Service Section start Here ========================================-->
         <section class="container og-service">
             <h2 class="og-service-title text-center">SEO <span class="text-white">Consulting Services</span></h2>
@@ -181,21 +179,20 @@
             </div>
         </section>
         <!-- ================================Service Section End Here ========================================-->
-
         <!-- ================================Who We Are Section Start Here ========================================-->
         <section class="container og-who-we-are">
             <div class="og-who-we-are-left">
                 <div>
-                    <img src="frontend/assets/images/who-we-are.png" alt="" class="og-who-we-are-image">
+                    <img src="{{asset($whoWeAre->image ?? 'frontend/assets/images/who-we-are.png')}}" alt="" class="og-who-we-are-image">
                     <p class="og-who-we-are-img-title image-subtitle">
                         {{ $whoWeAre->designation ?? 'Cassie Vignieri, President and Founder.' }}
                     </p>
                 </div>
                 <p class="og-who-we-are-img-title">{!! $whoWeAre->sub_content ??
-                    'We believe in partnership
-                                                                                                                                                                                                                                                                                                                                                                                    over quick wins. You won’t just get SEO
-                                                                                                                                                                                                                                                                                                                                                                                    tactics—you’ll get a long-term ally who’s
-                                                                                                                                                                                                                                                                                                                                                                                    invested in your growth.' !!} </p>
+    'We believe in partnership
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    over quick wins. You won’t just get SEO
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    tactics—you’ll get a long-term ally who’s
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    invested in your growth.' !!} </p>
             </div>
             <div class="og-who-we-are-right">
                 <h2 class="og-who-we-are-title">
@@ -203,15 +200,15 @@
                 </h2>
                 <p class="og-who-we-are-description">
                     {!! $whoWeAre->content ??
-                        ' At <span class="og-highlighted">SEO ESP</span>, we don’t just optimize pages—we build momentum. Our
-                                                                                                                                                                                                                                                                                                                                                                                                                expert SEO
-                                                                                                                                                                                                                                                                                                                                                                                                                and digital marketing
-                                                                                                                                                                                                                                                                                                                                                                                                                services are
-                                                                                                                                                                                                                                                                                                                                                                                                                designed to drive targeted traffic, increase conversions, and create a roadmap for sustained success.
-                                                                                                                                                                                                                                                                                                                                                                                                                Whether
-                                                                                                                                                                                                                                                                                                                                                                                                                you’re a scaling startup or an established brand rethinking your strategy, we help you turn challenges
-                                                                                                                                                                                                                                                                                                                                                                                                                into
-                                                                                                                                                                                                                                                                                                                                                                                                                opportunities for growth.' !!}
+    ' At <span class="og-highlighted">SEO ESP</span>, we don’t just optimize pages—we build momentum. Our
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        expert SEO
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        and digital marketing
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        services are
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        designed to drive targeted traffic, increase conversions, and create a roadmap for sustained success.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Whether
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        you’re a scaling startup or an established brand rethinking your strategy, we help you turn challenges
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        into
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        opportunities for growth.' !!}
 
                 </p>
                 <div class="og-who-we-are-list">
@@ -247,49 +244,45 @@
                         @foreach ($whoWeAreItems as $item)
                             <div class="flex items-start gap-10">
                                 <img src="frontend/assets/images/svg/check.svg" alt="">
-                                <p class="og-who-we-are-list-description">
-                                    <span class="og-highlighted">{{ $item->title }}</span>
-                                    {{ $item->content }}
-                                </p>
+                                <div class="og-who-we-are-list-description">
+                                    <p class="og-highlighted">{!! $item->title !!}</p>
+
+                                </div>
                             </div>
                         @endforeach
                     @endif
                 </div>
-                <a href="{{ route('about') }}" class="og-btn-2">{{ $homeBanner->button_text ?? 'Learn More' }}
-                    <img src="frontend/assets/images/svg/button_icon.svg" alt="">
+                <a href="{{ route('about') }}" class="og-btn-2">{{ $whoWeAre->btn_text ?? 'Learn More' }}
+                    <img src="frontend/assets/images/svg/button_icon.svg" alt="{{$whoWeAre->image_alt ?? 'Who We Are'}}">
                 </a>
             </div>
         </section>
         <!-- ================================Who We Are Section End Here ========================================-->
-
         <!-- ================================Why Trust Us With Your SEO? Section Start Here ========================================-->
         <section class="og-trust-section">
             <div class="container flex items-center flex-col og-trust-content">
                 <h2 class="og-trust-title">Why Trust Us With Your SEO?</h2>
-                <p class="text-center og-trust-description">
+                <div class="text-center og-trust-description">
                     {!! $homeWhyTrust->content ??
-                        'Many SEO consultants would have you believe this work lives in a black box, reserved for those with
-                                                                                mysterious
-                                                                                insider knowledge. Most people don’t know much about search or algorithms beyond typing keywords into
-                                                                                Google
-                                                                                and reading the results. So when traffic drops, they’re often left in the dark, relying on someone who
-                                                                                does
-                                                                                understand.
-                                                                                <br>
-                                                                                <br>
-                                                                                We’ve all heard the story of the mechanic who tells you ten things are wrong with your car when all you
-                                                                                came
-                                                                                in for was an oil change. Because of the knowledge gap, it’s easy to get overcharged for services you
-                                                                                may not
-                                                                                need. SEO can be the same.' !!}
+    'Many SEO consultants would have you believe this work lives in a black box, reserved for those with
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        mysterious
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        insider knowledge. Most people don’t know much about search or algorithms beyond typing keywords into
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        Google
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        and reading the results. So when traffic drops, they’re often left in the dark, relying on someone who
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        does
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        understand.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <br>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <br>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        We’ve all heard the story of the mechanic who tells you ten things are wrong with your car when all you
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        came
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        in for was an oil change. Because of the knowledge gap, it’s easy to get overcharged for services you
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        may not
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        need. SEO can be the same.' !!}
 
-                </p>
+                </div>
             </div>
         </section>
         <!-- ================================Why Trust Us With Your SEO? Section End Here ========================================-->
-
-
-
         <!-- ================================What Makes SEO ESP Different? Section Start Here ========================================-->
         <section class="container og-seo-esp-section">
             <h2 class="og-common-title text-center">What Makes<span class="text-white"> SEO ESP Different?</span></h2>
@@ -366,9 +359,6 @@
             </div>
         </section>
         <!-- ================================What Makes SEO ESP Different? Section End Here ========================================-->
-
-
-
         <!-- ================================Get In Touch Section End Here ========================================-->
         <section id="get_in_touch" class="container og-get-in-touch">
             <h1 class="og-common-title text-center">Get <span class="text-white">In Touch</span></h1>

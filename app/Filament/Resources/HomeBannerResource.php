@@ -27,6 +27,7 @@ class HomeBannerResource extends Resource
 
     protected static ?string $navigationGroup = 'Home Page';
     protected static ?string $navigationLabel = 'Banner Content';
+    protected static ?int $navigationSort = -100;
 
     /**
      * Configure the form for creating/editing records.

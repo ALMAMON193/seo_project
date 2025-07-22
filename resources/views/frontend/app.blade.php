@@ -8,9 +8,9 @@ $setting = \App\Models\SystemSetting::first();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title')</title>
-    <meta name="title" content="@yield('title')" />
-    <meta name="description" content="@yield('description')" />
-    <meta name="keywords" content="@yield('keywords')" />
+    <meta name="title" content="@yield('meta_title', $setting->meta_title ?? config('app.name'))" />
+    <meta name="description" content="@yield('meta_description', $setting->meta_description ?? '')" />
+    <meta name="keywords" content="@yield('meta_keywords', $setting->meta_keywords ?? '')" />
     <meta name="csrf_token" content="{{ csrf_token() }}" />
     <link rel="icon" type="image/x-icon"
         href="{{ asset($setting->favicon ?? 'frontend/assets/images/avatar.png') }}">

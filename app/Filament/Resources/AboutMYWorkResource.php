@@ -25,6 +25,7 @@ class AboutMYWorkResource extends Resource
     protected static ?string $navigationGroup = 'About Sections';
 
     protected static ?string $label = 'My Work';
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {

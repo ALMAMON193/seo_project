@@ -8,17 +8,17 @@
             </div>
             <div class="og-beyond-basic-keyword-right">
                 <div>
-                    <h2 class="og-beyond-content-seo-section-heading">
+                    <div class="og-beyond-content-seo-section-heading">
                         {{ $localSeo->title ?? 'Local SEO' }}
-                    </h2>
+                    </div>
 
-                    <p class="og-beyond-basic-keyword-description">
+                    <div class="og-beyond-basic-keyword-description">
                         {{ $localSeo->content ?? 'Winning in local search isn’t about being flawless—it’s about being more optimized than the businesses around you.' }}
-                    </p>
+                    </div>
 
-                    <p class="og-beyond-basic-keyword-description">
+                    <div class="og-beyond-basic-keyword-description">
                         {{ $localSeo->sub_content ?? 'We start with competitive analysis in your specific geographic area to identify what’s working for others—and where they’re falling short. Then we tailor a strategy to outperform them on local rankings, maps, and discovery.' }}
-                    </p>
+                    </div>
 
                     <div class="local-seo-our-approach-list-container">
                         @foreach ($localSeoItem as $item)

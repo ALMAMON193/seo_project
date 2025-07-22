@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Filament\Resources\SystemResource\Pages;
+
+use App\Filament\Resources\SystemResource;
+use App\Models\SystemSetting;
+use Filament\Actions;
+use Filament\Resources\Pages\ListRecords;
+
+class ListSystems extends ListRecords
+{
+    protected static string $resource = SystemResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\CreateAction::make()->visible(function () {
+                return SystemSetting::where('id', 1)
+                    ->doesntExist();
+            })
+        ];
+    }
+}

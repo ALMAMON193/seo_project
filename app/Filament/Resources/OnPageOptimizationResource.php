@@ -26,7 +26,7 @@ class OnPageOptimizationResource extends Resource
 
     protected static ?string $navigationGroup = 'One Page Optimization SEO';
     protected static ?string $navigationLabel = 'On Page Optimization SEO';
-
+    protected static ?int $navigationSort = -100;
     public static function form(Form $form): Form
     {
         return $form

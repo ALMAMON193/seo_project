@@ -11,6 +11,7 @@
         "bensampo/laravel-enum": "^6.11",
         "filament/filament": "^3.3",
         "hasnayeen/themes": "^3.0",
+        "joaopaulolndev/filament-edit-profile": "^1.0",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "rawilk/filament-quill": "^1.0",

@@ -15,7 +15,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class User extends Authenticatable implements FilamentUser,HasName
+class User extends Authenticatable implements FilamentUser
 {
     use HasFactory, Notifiable, SoftDeletes, Notifiable;
 
@@ -23,10 +23,6 @@ class User extends Authenticatable implements FilamentUser,HasName
     public function canAccessPanel(Panel $panel): bool
     {
         return true;
-    }
-     public function getFilamentName(): string
-    {
-        return "{$this->fname} {$this->lname}";
     }
     protected $guarded = [];
 

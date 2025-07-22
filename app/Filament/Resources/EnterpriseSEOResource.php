@@ -27,6 +27,7 @@ class EnterpriseSEOResource extends Resource
 
     protected static ?string $navigationGroup = 'Enterprise SEO';
     protected static ?string $navigationLabel = 'Enterprise SEO';
+    protected static ?int $navigationSort = -100;
 
     public static function form(Form $form): Form
     {

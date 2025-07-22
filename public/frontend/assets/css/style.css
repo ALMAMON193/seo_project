@@ -2169,6 +2169,7 @@ Keyword Research Section Start Here
     outline: none;
     border: 2px solid #111200;
     margin-top: 20px;
+    text-wrap: nowrap;
 }
 
 .og-beyond-basic-keyword-card-icon{
@@ -2396,19 +2397,16 @@ Content SEO Section End Here
 */
 
 .og-beyond-content-seo-section-heading {
-    text-align: left;
-}
-
-.og-beyond-content-seo-section-heading {
     color: var(--Blue-Grey-800, #212b36);
     font-family: Roboto;
     font-size: 44px;
     font-style: normal;
     font-weight: 600;
-    line-height: 30px;
+    line-height: 110%;
     /* 68.182% */
     padding-bottom: 20px;
     margin-top: 10px;
+    text-align: left;
 }
 
 .our-approach-card-container {

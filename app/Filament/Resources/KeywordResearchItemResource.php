@@ -24,7 +24,7 @@ class KeywordResearchItemResource extends Resource
 
     protected static ?string $navigationGroup = 'Keyword Research and Tracking';
     protected static ?string $navigationLabel = 'Keyword Research Items';
-
+    protected static ?int $navigationSort = 0;
     public static function form(Form $form): Form
     {
         return $form

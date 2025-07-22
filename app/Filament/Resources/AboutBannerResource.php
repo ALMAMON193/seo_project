@@ -25,6 +25,8 @@ class AboutBannerResource extends Resource
 
     protected static ?string $label = 'Banner Section';
 
+    protected static ?int $navigationSort = -100;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -60,6 +62,7 @@ class AboutBannerResource extends Resource
                                     ->disabled()
                                     ->dehydrated(true),
                             ])
+
                             ->columnSpan(4),
                     ]),
             ]);

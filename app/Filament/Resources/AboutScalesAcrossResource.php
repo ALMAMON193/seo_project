@@ -26,7 +26,7 @@ class AboutScalesAcrossResource extends Resource
     protected static ?string $navigationGroup = 'About Sections';
 
     protected static ?string $label = 'Scales Across';
-
+    protected static ?int $navigationSort = 2;
     public static function form(Form $form): Form
     {
         return $form

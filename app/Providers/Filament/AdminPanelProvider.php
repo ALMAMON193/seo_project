@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Providers\Filament;
 
 use Filament\Pages;
@@ -19,6 +18,7 @@ use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -37,15 +37,20 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->plugin(
-                ThemesPlugin::make()
-            )
+             ->plugins([
+                FilamentEditProfilePlugin::make()
+                    ->setNavigationGroup('Settings')
+                    ->setNavigationLabel('Profile')
+                    ->setIcon('heroicon-o-user')
+
+            ])
+
+            ->plugin(ThemesPlugin::make())
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
-
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
@@ -56,7 +61,20 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                SetTheme::class
+                SetTheme::class,
+            ])
+            ->navigationGroups([
+                'Home Page',
+                'About Sections',
+                'Service Banner Section',
+                'Content SEO',
+                'Local SEO',
+                'Keyword Research and Tracking',
+                'Technical SEO',
+                'Enterprise SEO',
+                'One Page Optimization SEO',
+                'Data Analysis SEO',
+                'E-commerce SEO',
             ])
             ->authMiddleware([
                 Authenticate::class,

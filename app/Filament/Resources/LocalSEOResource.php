@@ -24,7 +24,7 @@ class LocalSEOResource extends Resource
 
     protected static ?string $navigationGroup = 'Local SEO';
     protected static ?string $navigationLabel = 'Local SEO';
-
+    protected static ?int $navigationSort = -100;
     public static function form(Form $form): Form
     {
         return $form

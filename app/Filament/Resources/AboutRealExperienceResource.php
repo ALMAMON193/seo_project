@@ -24,6 +24,7 @@ class AboutRealExperienceResource extends Resource
     protected static ?string $navigationGroup = 'About Sections';
 
     protected static ?string $label = 'Real Experience';
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {

@@ -25,6 +25,7 @@ class HomeWhyTrustResource extends Resource
 
     protected static ?string $navigationGroup = 'Home Page';
     protected static ?string $navigationLabel = 'Why Trust Us';
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
