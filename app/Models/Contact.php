@@ -9,5 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Contact extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        'fname', 'lname', 'email', 'phone', 'company_name', 'subject', 'message'
+    ];
 }

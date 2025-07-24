@@ -3,6 +3,51 @@ $setting = \App\Models\SystemSetting::first();
 @endphp
 @extends('frontend.app')
 @section('title', 'Home Page | Search Engine Optimization Services')
+<style>
+
+    #successMessage, #errorMessage {
+        font-weight: bold;
+        padding: 1em 1.5em;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        font-family: 'Inter', sans-serif;
+        max-width: 400px;
+        margin: 1em auto;
+        animation: showAndFade 5s ease-in-out forwards;
+    }
+
+    #successMessage {
+        color: #1a3c34;
+        background: #e6ffed;
+    }
+
+    #successMessage:before {
+        content: '✔';
+        color: #36b37e;
+        font-size: 1.2em;
+    }
+
+    #errorMessage {
+        color: #4d1010;
+        background: #ffe6e6;
+    }
+
+    #errorMessage:before {
+        content: '!';
+        color: #d93025;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    @keyframes showAndFade {
+        0% { opacity: 0; transform: translateY(10px); }
+        10% { opacity: 1; transform: translateY(0); }
+        90% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(10px); }
+    }
+</style>
 @section('content')
     <main class="og-bg-primary-color">
         <!-- =============================== Banner Section Start Here ======================================-->
@@ -440,7 +485,7 @@ $setting = \App\Models\SystemSetting::first();
                     </div>
                 </div>
                 <div class="og-get-in-touch-form-container" id="og-lets-work-section">
-                    <form id="contactForm" action="{{ route('contact.store') }}" method="POST">
+                    <form id="contactForm" action="{{ route('contact.page.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="og-get-in-touch-form">
                             <div class="og-get-in-touch-input">
@@ -507,157 +552,53 @@ $setting = \App\Models\SystemSetting::first();
                                 <path d="M0 0.726562H301.361" stroke="#8D8D8D" />
                             </svg>
                         </div>
-
-                        <!-- Status Messages -->
-                        <div id="formSuccess" class="og-form-message og-form-success" style="display: none;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                            <span>Thank you for your message! We will contact you soon.</span>
-                        </div>
-
-                        <div id="formError" class="og-form-message og-form-error" style="display: none;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                            </svg>
-                            <span>There was an error submitting your form. Please try again.</span>
-                        </div>
-
                         <div class="send-message">
                             <button type="submit" class="og-btn" id="submitButton">Send Message</button>
                         </div>
                     </form>
+                    <div id="successMessage" style="display:none; color: green; margin-top: 10px;">Your message has been sent successfully!</div>
+                    <div id="errorMessage" style="display:none; color: red; margin-top: 10px;">Something went wrong. Please try again.</div>
                 </div>
-
-                <style>
-                    /* Form Messages Styling */
-                    .og-form-message {
-                        padding: 15px;
-                        margin: 20px 0;
-                        border-radius: 4px;
-                        display: flex;
-                        align-items: center;
-                        gap: 12px;
-                    }
-
-                    .og-form-success {
-                        background-color: #f0fff4;
-                        color: #2d7d46;
-                        border: 1px solid #9ae6b4;
-                    }
-
-                    .og-form-error {
-                        background-color: #fff5f5;
-                        color: #c53030;
-                        border: 1px solid #fc8181;
-                    }
-
-                    .og-form-message svg {
-                        flex-shrink: 0;
-                    }
-
-                    /* Button loading state */
-                    .og-btn.loading {
-                        position: relative;
-                        pointer-events: none;
-                    }
-
-                    .og-btn.loading:after {
-                        content: "";
-                        position: absolute;
-                        width: 16px;
-                        height: 16px;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        margin: auto;
-                        border: 3px solid transparent;
-                        border-top-color: #ffffff;
-                        border-radius: 50%;
-                        animation: button-loading-spinner 1s ease infinite;
-                    }
-
-                    @keyframes button-loading-spinner {
-                        from {
-                            transform: rotate(0turn);
-                        }
-
-                        to {
-                            transform: rotate(1turn);
-                        }
-                    }
-                </style>
-
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const form = document.getElementById('contactForm');
-                        const submitButton = document.getElementById('submitButton');
-                        const successMessage = document.getElementById('formSuccess');
-                        const errorMessage = document.getElementById('formError');
-
-                        form.addEventListener('submit', function(e) {
-                            e.preventDefault();
-
-                            // Reset messages
-                            successMessage.style.display = 'none';
-                            errorMessage.style.display = 'none';
-
-                            // Set button to loading state
-                            submitButton.classList.add('loading');
-                            submitButton.disabled = true;
-                            submitButton.innerHTML = '<span style="visibility: hidden;">Send Message</span>';
-
-                            // Prepare form data
-                            const formData = new FormData(form);
-
-                            // Submit via fetch API
-                            fetch(form.action, {
-                                    method: 'POST',
-                                    body: formData,
-                                    headers: {
-                                        'Accept': 'application/json',
-                                        'X-Requested-With': 'XMLHttpRequest'
-                                    }
-                                })
-                                .then(response => {
-                                    if (!response.ok) {
-                                        throw new Error('Network response was not ok');
-                                    }
-                                    return response.json();
-                                })
-                                .then(data => {
-                                    if (data.success) {
-                                        // Show success message
-                                        successMessage.style.display = 'flex';
-                                        form.reset();
-                                    } else {
-                                        // Show error message
-                                        errorMessage.style.display = 'flex';
-                                    }
-                                })
-                                .catch(error => {
-                                    console.error('Error:', error);
-                                    errorMessage.style.display = 'flex';
-                                })
-                                .finally(() => {
-                                    // Reset button state
-                                    submitButton.classList.remove('loading');
-                                    submitButton.disabled = false;
-                                    submitButton.innerHTML = 'Send Message';
-                                });
-                        });
-                    });
-                </script>
             </div>
         </section>
         <!-- ================================Get In Touch Section End Here ========================================-->
     </main>
 @endsection
+@push('js')
+    <script>
+        $(document).ready(function() {
+            $('#contactForm').on('submit', function(e) {
+                e.preventDefault();
+
+                const form = this;
+                const formData = new FormData(form);
+
+                $('#submitButton').prop('disabled', true).text('Sending...');
+
+                $.ajax({
+                    url: "{{ route('contact.page.store') }}",
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    headers: {
+                        'X-CSRF-TOKEN': $('input[name="_token"]').val()
+                    },
+                    success: function(response) {
+                        $('#successMessage').show();
+                        $('#errorMessage').hide();
+                        form.reset();
+                    },
+                    error: function(xhr) {
+                        $('#errorMessage').show();
+                        $('#successMessage').hide();
+                    },
+                    complete: function() {
+                        $('#submitButton').prop('disabled', false).text('Send Message');
+                    }
+                });
+            });
+        });
+    </script>
+@endpush
+

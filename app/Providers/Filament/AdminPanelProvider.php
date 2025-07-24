@@ -42,9 +42,7 @@ class AdminPanelProvider extends PanelProvider
                     ->setNavigationGroup('Settings')
                     ->setNavigationLabel('Profile')
                     ->setIcon('heroicon-o-user')
-
             ])
-
             ->plugin(ThemesPlugin::make())
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([

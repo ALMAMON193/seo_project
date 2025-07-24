@@ -10,7 +10,6 @@
                  <div>
                      <h2 class="og-beyond-content-seo-section-heading">
                          {{ $technicalSeo->title ?? 'Technical SEO' }}
-
                      </h2>
                      <p class="og-beyond-basic-keyword-description">
                          {!! $technicalSeo->content ??

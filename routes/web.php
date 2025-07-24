@@ -9,8 +9,6 @@ Route::get('/', function () {
 });
 
 Route::controller(ContactController::class)->group(function () {
-    Route::POST('/contact-submit', 'contactPageStore')->name('contact.store');
-    Route::POST('/contact-page-submit', 'ContactContactPage')->name('contact_page.contact.store');
+    Route::post('/contact-us', 'contactPageStore')->name('contact.page.store'); // for submitting the form
 });
-
 require __DIR__ . '/frontend.php';
